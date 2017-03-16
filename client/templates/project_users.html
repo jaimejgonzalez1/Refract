@@ -1,0 +1,11 @@
+<template name="addProject_user">
+    <form>
+        <select name="Project_Users"> {{#each projects_users}}
+            <option value={{_id}}>{{projectname}}</option> {{/each}}</select>
+        <select name="projectUsers"> {{#each projectContributors}}
+            <option value={{_id}}>{{username}}</option> {{/each}} </select>
+        <input type="checkbox" name="status">
+        <input type="submit" value="Add Project User"> </form>
+</template>
+<template name="project_users"> {{#each projects_users}}
+    <h3>ADDED!</h3> {{/each}} </template>

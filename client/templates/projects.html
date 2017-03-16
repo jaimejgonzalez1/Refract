@@ -1,0 +1,13 @@
+<template name="addProject">
+    <form>
+        <input type="text" name="projectName" placeholder="Project Title">
+        <input type="text" name="projectDesc" placeholder="Description">
+        <input type='date' name="clientDate" placeholder="Days until Expiration">
+        <select name="projectUser"> {{#each projectContributors}}
+            <option value={{_id}}>{{username}}</option> {{/each}} </select>
+        <input type="submit" value="Add Project"> </form>
+</template>
+<template name="projects"> {{#each projects}}
+    <h3>Project Title: {{projectname}}</h3>
+    <p>Contributor: {{projectUser.username}}
+        <br /> Description: {{description}}</p> {{/each}} </template>

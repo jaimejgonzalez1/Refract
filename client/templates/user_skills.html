@@ -1,0 +1,13 @@
+<template name="addSkills">
+    <form>
+        <select name="user_SkillL"> {{#each skillL}}
+            <option value={{_id}}>{{skill_name}}</option> {{/each}} </select>
+        <select name="user_Skills"> {{#each skills}}
+            <option value={{_id}}>{{username}}</option> {{/each}} </select>
+        <input type="text" name="skillName" placeholder="or Enter">
+        <input type="submit" value="Add Skill"> </form>
+</template>
+<template name="user_skills"> {{#each skills}}
+    <h3>Skill Title: {{skillname}}</h3>
+    <p>Contributor: {{user_skills.username}}
+        <br /> </p> {{/each}} </template>

@@ -1,0 +1,8 @@
+<template name="add_skills">
+    <form>
+        <input type="text" name="skill_name" placeholder="Add Skill">
+        <input type="text" name="parent_id" placeholder="catergory/parent">
+        <input type="submit" value="Add Skill to database"> </form>
+</template>
+<template name="adding_skills"> {{#each adding}}
+    <h3>{{skill_name}}</h3> {{/each}} </template>

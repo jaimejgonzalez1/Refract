@@ -1,0 +1,13 @@
+<template name="addUser">
+    <form>
+        <input type="text" name="uname" placeholder="name">
+        <input type="text" name="uemail" placeholder="email">
+        <input type="text" name="uoccupate" placeholder="occupation">
+        <input type="text" name="role" placeHolder="Admin or User">
+        <input type="submit" value="Add User">
+        <input type="button" value="Remove User"> </form>
+</template>
+<template name="users">
+    <ul> {{#each user}}
+        <li>{{username}} - {{email}} (_id is {{_id}}) - {{occupation}} - {{userrole}}</li> {{/each}} </ul>
+</template>
