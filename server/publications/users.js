@@ -84,3 +84,9 @@ Meteor.publishComposite('project_skills', {
         }
     , ]
 });
+Meteor.publishComposite('skills', {
+    // get the Skills collection - contains 'contributor' field which holds a user id from the Users collection
+    find: function () {
+        return Skills.find();
+    }
+});
