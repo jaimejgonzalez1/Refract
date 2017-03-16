@@ -1,8 +1,8 @@
-#Refract
-IAM senior capstone project
+Refract
+===
 
-##MVP
-Minimum viable project
+MVP
+---
 
 ###Organization
     - Create account
