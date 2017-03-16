@@ -1,8 +1,6 @@
 #Refract
----------
 
 ##MVP
----------
 
 ###Organization
     - Create account
