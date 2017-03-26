@@ -1,0 +1,19 @@
+<template name="student">
+    <section>
+        <h2>Student View</h2>
+        <ul>
+        {{#each project in projects}}
+            <li>
+                {{project._id}}
+                <form class="applyProjectSubmit" action="index.html" method="post">
+                    <input type="submit" name="project" value="{{project.project_name}}">
+                </form>
+            </li>
+        {{/each}}
+        </ul>
+    </section>
+</template>
+
+<template name="apply_project">
+
+</template>

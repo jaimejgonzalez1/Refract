@@ -1,11 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
 import { publishComposite } from 'meteor/reywood:publish-composite';
-import '../imports/acct-config.js';
+// import '../imports/acct-config.js';
 
+import './publications/projectsPublish.js';
+
+Projects = new Mongo.Collection('projects');
 
 // create the three collections
-// Users = new Mongo.Collection('users2');
 // Roles = new Mongo.Collection('roles');
 // Projects = new Mongo.Collection('projects');
 // User_Skills = new Mongo.Collection('user_skills');

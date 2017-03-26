@@ -1,6 +1,26 @@
 // from https://atmospherejs.com/reywood/publish-composite
-Meteor.publishComposite('projectUsers', {
-    // get the Projects collection - contains 'contributor' field which holds a user id from the Users collection
+Meteor.publishComposite('projects', function(_userId) {
+    return {
+    find: function () {
+        return Projects.find({owner_id: _userId});
+    }
+    , children: [
+        {
+            // passes in each individual project from the Projects collection
+            find: function (project) {
+                // cross reference each project on the Users collection where _id in Users is equal to project.contributor
+                return Users.find(
+                    profile: {
+                    applied_projects: project._id
+                });
+            }
+        }
+    , ]
+}
+});
+
+Meteor.publishComposite('projects_students', function(_userId) {
+    return {
     find: function () {
         return Projects.find();
     }
@@ -10,11 +30,12 @@ Meteor.publishComposite('projectUsers', {
             find: function (project) {
                 // cross reference each project on the Users collection where _id in Users is equal to project.contributor
                 return Users.find({
-                    _id: project.contributor
+                    // _id: project.contributor
                 });
             }
         }
     , ]
+}
 });
 // Meteor.publishComposite('user_Skills', {
 //     // get the Projects collection - contains 'contributor' field which holds a user id from the Users collection

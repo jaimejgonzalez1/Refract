@@ -1,0 +1,28 @@
+<body>
+
+    {{> atForm}}
+    <!-- {{> logout}} -->
+    {{#if isLoggedIn}}
+    {{#if isOrg}}
+        {{> organization}}
+    {{/if}}
+    {{#if isStudent}}
+        {{> student}}
+    {{/if}}
+    {{/if}}
+    <!-- {{> dynamicTemplate}} -->
+
+
+    <!-- <h1 class="led">Users</h1> {{> users}} {{> addUser}}
+    <h2>User Skills</h2> {{>user_skills}} {{>addSkills}}
+    <h2>Project Users</h2> {{>addProject_user}} {{>project_users}}
+    <hr>
+    <h1 class="led">Projects</h1> {{> projects}} {{> addProject}}
+    <h2>Project Users </h2>{{>addProject_user}} {{>project_users}}
+    <h2>Project Skills</h2> {{>addProject_skill}} {{>project_skills}}
+    <hr>
+    <h1 class="led">Skills</h1>
+    <h2>ADDING SKILL</h2> {{>add_skills}} -->
+
+
+</body>
