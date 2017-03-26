@@ -4,16 +4,12 @@
         <ul>
         {{#each project in projects}}
             <li>
-                {{project._id}}
+                {{project.project_name}}
                 <form class="applyProjectSubmit" action="index.html" method="post">
-                    <input type="submit" name="project" value="{{project.project_name}}">
+                    <input type="submit" name="project" value="{{project._id}}">
                 </form>
             </li>
         {{/each}}
         </ul>
     </section>
-</template>
-
-<template name="apply_project">
-
 </template>

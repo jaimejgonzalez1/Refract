@@ -4,6 +4,7 @@ import { Template } from 'meteor/templating';
 import './student.html';
 
 Meteor.subscribe('projects_students');
+// Projects = new Mongo.Collection('projects');
 
 Template.student.helpers({
     'projects': function() {
@@ -12,16 +13,12 @@ Template.student.helpers({
     },
 });
 
-
 Template.student.events({
     'submit .applyProjectSubmit'(event, wut) {
         event.preventDefault();
         console.log(event.target.project.value);
-        //value might be available in context???
-        //check/make array and change to $push
-            console.log(Meteor.user.update(Meteor.userId(), {
-                $set: { profile: { "applied_projects": this._id } }
-    }));
-// );
-}
+            console.log(Meteor.users.update({_id: Meteor.userId()}, {
+                $set: { "profile.applied_projects": event.target.project.value }
+            }));
+    }
 });

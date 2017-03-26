@@ -3,11 +3,10 @@ import { Template } from 'meteor/templating';
 
 import './projects.html';
 
-
-console.log(Meteor.userId());
+// console.log(Meteor.userId());
 Meteor.subscribe('projects', Meteor.userId());
 
-Projects = new Mongo.Collection('projects');
+// Projects = new Mongo.Collection('projects');
 
 Template.projects.helpers({
     // get all the Users collection
