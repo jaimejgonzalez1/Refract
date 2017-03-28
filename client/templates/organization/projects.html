@@ -22,12 +22,12 @@
                 <dd>{{date_added}}</dd>
                 <dt>Expiration date:</dt>
                 <dd>{{date_expiry}}</dd>
-                {{#if students}}
+                <!-- {{#if students}} -->
                     <dt>Students applied:</dt>
-                    {{#each students}}
-                        <dd>{{student_name}}</dd>
+                    {{#each student in students}}
+                        <dd>Student: {{username}}</dd>
                     {{/each}}
-                {{/if}}
+                <!-- {{/if}} -->
             </dl>
             {{/each}}
         </ol>

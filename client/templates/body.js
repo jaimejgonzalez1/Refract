@@ -5,6 +5,7 @@ import '../../imports/acct-config.js';
 import './body.html';
 
 Projects = new Mongo.Collection('projects');
+// Users = new Mongo.Collection('users');
 
 
 Template.body.helpers({

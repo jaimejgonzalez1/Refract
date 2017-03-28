@@ -9,7 +9,7 @@
 - [ ] View students signed on? Or admin only?
 ### Students
 - [x] Create account
-- [ ] View live projects
+- [x] View live projects
 - [ ] Apply to project
 
 ## Data Structure

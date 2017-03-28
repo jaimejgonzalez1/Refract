@@ -19,11 +19,11 @@ AccountsTemplates.addFields([
   {
     _id: "type",
     type: "radio",
-    displayName: "aa",
+    displayName: "Choose:",
     select: [
         {
         text: "Organization",
-        value: "1",
+        value: "aa",
       }, {
         text: "Student",
         value: "bb",

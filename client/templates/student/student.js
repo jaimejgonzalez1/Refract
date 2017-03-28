@@ -3,7 +3,7 @@ import { Template } from 'meteor/templating';
 
 import './student.html';
 
-Meteor.subscribe('projects_students');
+Meteor.subscribe('projects');
 // Projects = new Mongo.Collection('projects');
 
 Template.student.helpers({

@@ -5,6 +5,7 @@ import './projects.html';
 
 // console.log(Meteor.userId());
 Meteor.subscribe('projects', Meteor.userId());
+Meteor.subscribe('Meteor.users.all');
 
 // Projects = new Mongo.Collection('projects');
 
@@ -13,14 +14,31 @@ Template.projects.helpers({
     'projects': function () {
         console.log(Projects.find().count());
 
-        return (Projects.find().count());
+        return (Projects.find({owner_id: Meteor.userId()}).count());
     }
 });
 Template.existingProjects.helpers({
     // get all the Users collection
-    'projects': function () {
+    'projects': function() {
         console.log(Projects.find());
-        return Projects.find();
+        return Projects.find({owner_id: Meteor.userId()});
+    },
+    'students': function() {
+        console.log(Meteor.users.find(
+            // {
+            //                     profile: {
+            //                     applied_projects: this._id
+            //                 }
+            //             }
+
+        ));
+        return Meteor.users.find(
+            // {
+            //                     profile: {
+            //                     applied_projects: this._id
+            //                 }
+            //             }
+        );
     }
 });
 
