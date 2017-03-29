@@ -1,17 +1,18 @@
-Meteor.publish('Meteor.users.by', function ({ userIds }) {
+Meteor.publish('Meteorusers', function (arrayOfIds) {
   // Validate the arguments to be what we expect
   // new SimpleSchema({
   //   userIds: { type: [String] }
   // }).validate({ userIds });
   // Select only the users that match the array of IDs passed in
   const selector = {
-    _id: { $in: userIds }
+    _id: { $in: arrayOfIds }
   };
   // Only return one field, `initials`
-  const options = {
-    fields: { initials: 1 }
-  };
-  return Meteor.users.find(selector, options);
+  // const options = {
+  //   fields: { initials: 1 }
+  // };
+  // return Meteor.users.find(selector);
+  return Meteor.users.find(selector);
 });
 
 // Meteor.publish('Meteor.users.all', function(userId) {

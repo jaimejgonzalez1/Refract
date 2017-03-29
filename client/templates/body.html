@@ -1,14 +1,19 @@
 <body>
 
-    {{> atForm}}
+
     <!-- {{> logout}} -->
     {{#if isLoggedIn}}
+        <form class="logout">
+            <input class="" type="submit" name="logout" value="logout">
+        </form>
     {{#if isOrg}}
         {{> organization}}
     {{/if}}
     {{#if isStudent}}
         {{> student}}
     {{/if}}
+    {{else}}
+        {{> atForm}}
     {{/if}}
     <!-- {{> dynamicTemplate}} -->
 

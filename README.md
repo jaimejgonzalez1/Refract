@@ -6,11 +6,11 @@
 - [x] Create project
 - [x] Add project details
 - [x] Launch
-- [ ] View students signed on? Or admin only?
+- [x] View students applied
 ### Students
 - [x] Create account
 - [x] View live projects
-- [ ] Apply to project
+- [x] Apply to project
 
 ## Data Structure
 ![Data Structure](./data_structure3_1024.png?raw=true "Data Structure")
@@ -24,7 +24,6 @@ Add more only as necessary. Update this list as necessary.
 - [x] **useraccounts** account manager
 - [x] **accounts-password** account manager flavor
 - [ ] **aldeed:simple-schema** Schema manager
-- [x] **reywood:publish-composite** Simple reactive join package _added but not currently used_
 - [x] **twbs:bootstrap** Bootstrap package _added but not currently used_
 - [ ] File Upload???
 
@@ -42,3 +41,12 @@ Add more only as necessary. Update this list as necessary.
 - Defining schema for checking data
 - File uploads
 - Styling!
+
+### Up next
+- [x] Add logout
+- [ ] Add skills collection
+- [ ] Add project_users collection
+- [ ] Clarify admin role
+- [ ] Add more project details
+ - [ ] Image upload discussion
+- [ ] Student profile details and updates

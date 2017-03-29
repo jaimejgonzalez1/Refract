@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
 import '../../imports/acct-config.js';
@@ -18,4 +19,13 @@ Template.body.helpers({
     isStudent() {
         return (Meteor.user().profile.type === "bb");
     },
+});
+
+Template.body.events({
+    'submit .logout'(evt) {
+        evt.preventDefault();
+        //add callback later
+        console.log(evt);
+        Meteor.logout();
+    }
 });

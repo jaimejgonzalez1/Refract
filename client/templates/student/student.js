@@ -17,8 +17,8 @@ Template.student.events({
     'submit .applyProjectSubmit'(event, wut) {
         event.preventDefault();
         console.log(event.target.project.value);
-            console.log(Meteor.users.update({_id: Meteor.userId()}, {
-                $set: { "profile.applied_projects": event.target.project.value }
+            console.log(Projects.update({_id: event.target.project.value}, {
+                $push: { "applied": Meteor.userId() }
             }));
     }
 });

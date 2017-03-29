@@ -3,11 +3,7 @@ import { Template } from 'meteor/templating';
 
 import './projects.html';
 
-// console.log(Meteor.userId());
 Meteor.subscribe('projects', Meteor.userId());
-Meteor.subscribe('Meteor.users.all');
-
-// Projects = new Mongo.Collection('projects');
 
 Template.projects.helpers({
     // get all the Users collection
@@ -24,28 +20,19 @@ Template.existingProjects.helpers({
         return Projects.find({owner_id: Meteor.userId()});
     },
     'students': function() {
-        console.log(Meteor.users.find(
-            // {
-            //                     profile: {
-            //                     applied_projects: this._id
-            //                 }
-            //             }
-
-        ));
+        Meteor.subscribe('Meteorusers', this.applied);
         return Meteor.users.find(
-            // {
-            //                     profile: {
-            //                     applied_projects: this._id
-            //                 }
-            //             }
+            {profile: {
+                type: "bb"
+            }}
         );
     }
 });
 
 Template.addProject.events({
-    'submit .addProjectSubmit'(event) {
-                event.preventDefault();
-                const form = event.target;
+    'submit .addProjectSubmit'(evt) {
+                evt.preventDefault();
+                const form = evt.target;
                 // console.log(new Date(form.expDate.value));
                 // console.log(new Date());
 
@@ -58,6 +45,7 @@ Template.addProject.events({
                     date_added: new Date(),
                     date_expiry: new Date(form.expDate.value),
                     owner_id: Meteor.userId(),
+                    applied: [],
                 }));
     }
 });
