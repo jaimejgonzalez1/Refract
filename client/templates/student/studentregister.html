@@ -1,0 +1,45 @@
+<template name="student">
+    <section>
+        <h2>Student Registration</h2>
+        <form class="" action="index.html" method="post">
+            <label for="">Portfolio link:</label><input type="text" name="" value="">
+            <label for="">LinkedIn:</label><input type="text" name="" value="">
+            <input type="submit" name="next" value="">
+        </form>
+        <form class="skills" action="index.html" method="post">
+            <ul>
+                {{#EACH skill in parent_skills}}
+                    <li>
+                        <p>skill.name</p>
+                        <ul>
+                            {{#EACH child in child_skills}}
+                                <li>
+                                    <input type="text" name="" value=""><label for="">child.name</label>
+                                </li>
+                            {{/EACH}}
+                        </ul>
+                    </li>
+                {{/EACH}}
+            </ul>
+        </form>
+
+        <!-- skills form -->
+
+
+
+
+
+
+
+        <!-- <ul>
+        {{#each project in projects}}
+            <li>
+                {{project.project_name}}
+                <form class="applyProjectSubmit" action="index.html" method="post">
+                    <input type="submit" name="project" value="{{project._id}}">
+                </form>
+            </li>
+        {{/each}}
+        </ul> -->
+    </section>
+</template>
