@@ -1,25 +1,25 @@
-<template name="student">
+<template name="student_register">
     <section>
         <h2>Student Registration</h2>
         <form class="" action="index.html" method="post">
             <label for="">Portfolio link:</label><input type="text" name="" value="">
             <label for="">LinkedIn:</label><input type="text" name="" value="">
-            <input type="submit" name="next" value="">
+            <input type="submit" name="next" value="Submit">
         </form>
         <form class="skills" action="index.html" method="post">
             <ul>
-                {{#EACH skill in parent_skills}}
+                {{#each parent_skills}}
                     <li>
-                        <p>skill.name</p>
+                        <p>{{skill_name}}</p>
                         <ul>
-                            {{#EACH child in child_skills}}
+                            {{#each child_skills}}
                                 <li>
-                                    <input type="text" name="" value=""><label for="">child.name</label>
+                                    <input type="checkbox" name="" value=""><label for="">{{skill_name}}</label>
                                 </li>
-                            {{/EACH}}
+                            {{/each}}
                         </ul>
                     </li>
-                {{/EACH}}
+                {{/each}}
             </ul>
         </form>
 
