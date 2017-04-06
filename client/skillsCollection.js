@@ -3,7 +3,7 @@ var skillsCollection = [
     {
         id: 1,
         skill_name: "Business",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 2,
@@ -23,7 +23,7 @@ var skillsCollection = [
     {
         id: 5,
         skill_name: "Advertising and Marketing",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 6,
@@ -78,7 +78,7 @@ var skillsCollection = [
     {
         id: 16,
         skill_name: "Graphics & Design",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 17,
@@ -128,7 +128,7 @@ var skillsCollection = [
     {
         id: 26,
         skill_name: "Performance",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 27,
@@ -158,7 +158,7 @@ var skillsCollection = [
     {
         id: 32,
         skill_name: "Video & Animation",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 33,
@@ -178,7 +178,7 @@ var skillsCollection = [
     {
         id: 36,
         skill_name: "Music & Audio",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 37,
@@ -213,7 +213,7 @@ var skillsCollection = [
     {
         id: 43,
         skill_name: "Tech & Games",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 44,
@@ -248,7 +248,7 @@ var skillsCollection = [
     {
         id: 50,
         skill_name: "Fashion & Photography",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 51,
@@ -303,7 +303,7 @@ var skillsCollection = [
     {
         id: 61,
         skill_name: "Writing & Translation",
-        parent_id: null
+        parent_id: undefined
     },
     {
         id: 62,
