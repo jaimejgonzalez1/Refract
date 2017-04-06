@@ -2,7 +2,7 @@
 
 
     <!-- {{> logout}} -->
-    <!-- {{#if isLoggedIn}}
+    {{#if isLoggedIn}}
         <form class="logout">
             <input class="" type="submit" name="logout" value="logout">
         </form>
@@ -10,12 +10,11 @@
         {{> organization}}
     {{/if}}
     {{#if isStudent}}
-        {{> student}}
+        {{> student_register}}
     {{/if}}
     {{else}}
         {{> atForm}}
-    {{/if}} -->
-    {{> student_register}}
+    {{/if}}
     <!-- {{> dynamicTemplate}} -->
 
 
