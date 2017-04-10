@@ -6,19 +6,15 @@
             <label for="">LinkedIn:</label><input type="text" name="" value="">
             <input type="submit" name="next" value="Submit">
         </form>
-        <div class="panel-group">
-          <div class="panel panel-default">
         <form class="skills" action="index.html" method="post">
-            <ul>
+            <ul class="collapsible" data-collapsible="accordion">
                 {{#each parent_skills}}
                     <li>
-                      <div class="panel-heading">
-                        <h4 class="panel-title">
-                          <span data-toggle="collapse" href="#collapse{{id}}">{{skill_name}}</span>
-                        </h4>
+                      <div class="collapsible-header">
+                          <span class="material-icons">{{skill_name}}</span>
                       </div>
-                      <div id="collapse{{id}}" class="panel-collapse collapse">
-                        <ul class="list-group">
+                      <div id="" class="collapsible-body">
+                        <ul>
                             {{#each child_skills}}
                                 <li class="list-group-item">
                                     <input id="{{id}}" type="checkbox" name="" value=""><label for="{{id}}">{{skill_name}}</label>
@@ -30,8 +26,6 @@
                 {{/each}}
             </ul>
         </form>
-      </div>
-      </div>
 
         <!-- skills form -->
 
