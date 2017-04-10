@@ -1,9 +1,8 @@
 <body>
-  <div class="container">
 
 
     <!-- {{> logout}} -->
-    {{#if isLoggedIn}}
+    <!-- {{#if isLoggedIn}}
         <form class="logout">
             <input class="" type="submit" name="logout" value="logout">
         </form>
@@ -11,11 +10,12 @@
         {{> organization}}
     {{/if}}
     {{#if isStudent}}
-        {{> student_register}}
+        {{> student}}
     {{/if}}
     {{else}}
         {{> atForm}}
-    {{/if}}
+    {{/if}} -->
+    {{> student_register}}
     <!-- {{> dynamicTemplate}} -->
 
 
@@ -30,5 +30,5 @@
     <h1 class="led">Skills</h1>
     <h2>ADDING SKILL</h2> {{>add_skills}} -->
 
-  </div>
+
 </body>
