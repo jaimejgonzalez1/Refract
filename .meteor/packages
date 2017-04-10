@@ -21,8 +21,7 @@ insecure@1.0.7                # Allow all DB writes from clients (for prototypin
 accounts-password
 twbs:bootstrap
 useraccounts:core
-<<<<<<< HEAD
+
 materialize:materialize
 useraccounts:materialize
-=======
-useraccounts:unstyled
+

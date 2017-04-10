@@ -20,10 +20,11 @@
                         <ul>
                             {{#each child_skills}}
                                 <li>
-                                    <input type="checkbox" name="" value=""><label for="">{{skill_name}}</label>
+                                    <input id="{{_id}}" type="checkbox" name="" value=""><label for="{{_id}}">{{skill_name}}</label>
                                 </li>
                             {{/each}}
                         </ul>
+                      </div>
                     </li>
                 {{/each}}
             </ul>
