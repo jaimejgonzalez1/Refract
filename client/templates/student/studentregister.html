@@ -2,13 +2,13 @@
     <section>
         <h2>{{student_name}}</h2>
         <form class="" action="index.html" method="post">
-            <label for="">Portfolio link:</label><input type="text" name="" value="">
-            <label for="">LinkedIn:</label><input type="text" name="" value="">
+            <label for="profileLink">Portfolio link:</label><input id="profileLink" type="text" name="" value="{{profileLink}}">
+            <label for="linkedInLink">LinkedIn: <em>http://www.linkedin.com/in/{{linkedInLink}}</em></label><input id="linkedInLink" type="text" name="" value="{{linkedInLink}}">
             <input type="submit" name="next" value="Submit">
         </form>
         {{> skills_selector}}
         <form id="saveBlurb" class="" action="index.html" method="post">
-            <textarea name="name" rows="8" cols="80"></textarea>
+            <textarea name="name" rows="8" cols="80">{{blurb}}</textarea>
             <input type="submit" class="btn" name="" value="Save changes">
         </form>
         <form class="" action="index.html" method="post">
