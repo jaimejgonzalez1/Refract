@@ -5,6 +5,9 @@ import './studentregister.html';
 
 
 Template.student_register.helpers({
+    'student_name': function() {
+        return Meteor.user().username;
+    },
 });
 
 Template.student_register.rendered = function(){
@@ -12,11 +15,8 @@ Template.student_register.rendered = function(){
 }
 
 Template.student_register.events({
-    'submit .applyProjectSubmit'(event, wut) {
-        event.preventDefault();
-        console.log(event.target.project.value);
-            console.log(Projects.update({_id: event.target.project.value}, {
-                $push: { "applied": Meteor.userId() }
-            }));
-    }
+    'submit #saveBlurb'(evt, wut) {
+        evt.preventDefault();
+        console.log(evt);
+    },
 });
