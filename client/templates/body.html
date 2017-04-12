@@ -2,7 +2,7 @@
 
 
     <!-- {{> logout}} -->
-    <!-- {{#if isLoggedIn}}
+    {{#if isLoggedIn}}
         <form class="logout">
             <input class="" type="submit" name="logout" value="logout">
         </form>
@@ -10,12 +10,19 @@
         {{> organization}}
     {{/if}}
     {{#if isStudent}}
-        {{> student}}
+        {{> student_register}}
+        <!-- {{> student}} -->
     {{/if}}
     {{else}}
+
+<style media="screen">
+    .at-form > .at-pwd-form .row:nth-of-type(3) {
+        width: 20%;
+    }
+</style>
         {{> atForm}}
-    {{/if}} -->
-    {{> student_register}}
+    {{/if}}
+
     <!-- {{> dynamicTemplate}} -->
 
 

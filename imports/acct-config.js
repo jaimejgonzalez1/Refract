@@ -27,6 +27,9 @@ AccountsTemplates.addFields([
       }, {
         text: "Student",
         value: "bb",
+      }, {
+        text: "Faculty",
+        value: "cc",
       },
     ],
 },
