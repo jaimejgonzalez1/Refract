@@ -10,6 +10,9 @@ Skills = new Mongo.Collection(null);
 skillsCollection.forEach(function(skill) {Skills.insert(skill)});
 
 Template.skills_selector.helpers({
+    'checked': function() {
+        return _.contains(Meteor.user().profile.skills_arr, this.id);
+    },
     'parent_skills': function() {
         return Skills.find({parent_id: undefined});
     },
@@ -24,10 +27,9 @@ Template.skills_selector.rendered = function(){
 }
 
 Template.skills_selector.events({
-    'change .skill-input'(event, wut) {
+    'change .skill-input'(evt, wut) {
         var data_context = this;
-        var checked = event.target.checked;
-        console.log(checked);
+        var checked = evt.target.checked;
         if (checked) {
             if (Meteor.user().profile.skills_arr !== undefined) {
                 // push into array
