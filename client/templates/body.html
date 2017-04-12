@@ -1,6 +1,13 @@
 <body>
   <div class="z-depth-0 nav-wrapper">
+    <div class="row navigation">
     <a href="#" class="brand-logo logo">REFRACT</a>
+    {{#if isLoggedIn}}
+    <form class="logout">
+        <input class="btn" type="submit" name="logout" value="logout">
+    </form>
+    {{/if}}
+  </div>
   </div>
   <div class="container">
     <div class="row">
@@ -10,9 +17,7 @@
 
             <!-- {{> logout}} -->
             {{#if isLoggedIn}}
-                <form class="logout">
-                    <input class="" type="submit" name="logout" value="logout">
-                </form>
+
             {{#if isOrg}}
                 {{> organization}}
             {{/if}}
@@ -23,11 +28,14 @@
     {{/if}}
     {{else}}
 
-<style media="screen">
-    .at-form > .at-pwd-form .row:nth-of-type(3) {
-        width: 20%;
-    }
-</style>
+        <style media="screen">
+            .at-form > .at-pwd-form .row:nth-of-type(3) {
+                width: 20%;
+            }
+            .at-btn{
+              width: 20%;
+            }
+        </style>
         {{> atForm}}
     {{/if}}
 

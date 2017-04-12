@@ -15,7 +15,6 @@
    }
 .logo{
   position: absolute;
-  padding-top: 15px;
   padding-left: 30px;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
@@ -35,10 +34,46 @@
   background-color: #e91e63;
 }
 
-
 h4{
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 20px;
   color: #554b49;
   }
+
+  .logout{
+    float: right;
+    padding-right: 30px;
+  }
+
+  .navigation{
+    padding-top: 17px;
+  }
+  /* label focus color */
+    .input-field input[type=text]:focus + label {
+      color: #e91e63;
+ }
+ /* label underline focus color */
+    .input-field input[type=text]:focus {
+      border-bottom: 1px solid #e91e63;
+      box-shadow: 0 1px 0 0 #e91e63;
+    }
+
+      /* label focus color */
+        .input-field input[type=email]:focus + label {
+          color: #e91e63;
+     }
+     /* label underline focus color */
+        .input-field input[type=email]:focus {
+          border-bottom: 1px solid #e91e63;
+          box-shadow: 0 1px 0 0 #e91e63;
+        }
+        /* label focus color */
+          .input-field input[type=password]:focus + label {
+            color: #e91e63;
+       }
+       /* label underline focus color */
+          .input-field input[type=password]:focus {
+            border-bottom: 1px solid #e91e63;
+            box-shadow: 0 1px 0 0 #e91e63;
+          }
