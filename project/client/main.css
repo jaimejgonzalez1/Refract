@@ -5,7 +5,9 @@
 #e91e63   rgba(233,30,99,1)
 #554b49    rgba(85, 75, 73, 1)
 */
-
+ main {
+     padding-left: 300px;
+ }
 
  .nav-wrapper{
    height: 63px;

@@ -1,0 +1,130 @@
+<template name="dash">
+    <main>
+        <!-- <div class="row">
+        <div class="col s6">
+        <label for="search">Search</label>
+        <input placeholder="" id="search" type="text" class="validate">
+    </div>
+</div> -->
+{{> project_edit}}
+{{> project_view}}
+</main>
+{{> dash_nav}}
+</template>
+
+<template name="project_edit">
+    <div class="row">
+        <div class="col s8">
+            <h6>{{project_name}}</h6>
+            <input type="text" name="project_name" value="{{project_name}}">
+            <h6>Description</h6>
+            <textarea name="name" rows="8" cols="80">{{project_desc}}</textarea>
+            <h6>Project Due Date</h6>
+            <input type="date">
+            <!-- <input type="date"> -->
+        </div>
+        {{> project_skills}}
+    </div>
+    <div class="row">
+        <div class="col offset-s8">
+            <input type="submit" class="btn" id="launch_project" name="launch_project" value="Launch project">
+        </div>
+    </div>
+</template>
+
+<template name="dash_nav">
+    <div id="slide-out" class="side-nav fixed">
+        <div class="row">
+            <a href="#" class="brand-logo logo">REFRACT</a>
+        </div>
+        <div id="">
+                <ul>
+                    {{#each projects_owned}}
+                    <li><a href="#">{{project_name}}</a></li>
+                {{/each}}
+                </ul>
+                <ul>
+                {{#each projects_applied}}
+                    <li><a href="#">{{project_name}}</a></li>
+                {{/each}}
+                </ul>
+                <ul>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+                <div class="divider">
+                </div>
+                <form class="" id="new_project" action="index.html" method="post">
+                    <input type="submit" class="btn" name="new_project" value="CREATE NEW PROJECT!">
+                </form>
+                <!-- <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li>
+                <li><a href="#!">Second Sidebar Link</a></li>
+                <li><a href="#!">First Sidebar Link</a></li> -->
+            </ul>
+        </div>
+        <div>
+            <div class="divider"></div>
+            <form class="logout">
+                <input class="btn" type="submit" name="logout" value="logout">
+            </form>
+        </div>
+    </div>
+</template>
+
+<template name="project_skills">
+    <div class="col s4">
+        <h6>Skills</h6>
+        <form class="" action="index.html" method="post">
+            <ul class="collapsible" data-collapsible="accordion">
+                {{#each parent_skills}}
+                <li>
+                    <div class="collapsible-header">
+                        <span class="material-icons">{{skill_name}}</span>
+                    </div>
+                    <div id="" class="collapsible-body">
+                        <ul>
+                            {{#each child_skills}}
+                            <li>
+                                <input class="skill-input" id="{{_id}}" type="checkbox" name="" value="" checked="{{checked}}"><label for="{{_id}}">{{skill_name}}</label>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </form>
+    </div>
+</template>
+
+<template name="project_view">
+    <div class="row">
+        <div class="col s8">
+            <h6>{{project_name}}</h6>
+            <input type="text" name="project_name" value="{{project_name}}">
+            <h6>Description</h6>
+            <p>{{project_description}}</p>
+            <h6>Project Due Date</h6>
+            <input type="date">
+            <!-- <input type="date"> -->
+        </div>
+        {{> project_skills}}
+    </div>
+    <div class="row">
+        <div class="col offset-s8">
+            <input type="submit" id="launch_project" name="launch_project" value="Launch project">
+        </div>
+    </div>
+</template>
