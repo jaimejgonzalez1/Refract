@@ -21,6 +21,7 @@ Template.student_register.helpers({
 
 Template.student_register.rendered = function(){
   $('.collapsible').collapsible();
+  Materialize.updateTextFields();
 }
 
 Template.student_register.events({
@@ -32,10 +33,9 @@ Template.student_register.events({
     },
     'keyup #profileLink'(evt, wut) {
         evt.preventDefault();
-        var text = evt;
+        var text = evt.target.value;
         console.log(text);
-        // if (Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.blurb":text}})) {
-        // };
+        Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.profileLink":text}});
     },
     'keyup #linkedInLink'(evt, wut) {
         evt.preventDefault();

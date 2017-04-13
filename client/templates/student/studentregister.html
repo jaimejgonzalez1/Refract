@@ -2,9 +2,14 @@
     <section>
         <h2>{{student_name}}</h2>
         <form class="" action="index.html" method="post">
-            <label for="profileLink">Portfolio link:</label><input id="profileLink" type="text" name="" value="{{profileLink}}">
-            <label for="linkedInLink">LinkedIn: <em>http://www.linkedin.com/in/{{linkedInLink}}</em></label><input id="linkedInLink" type="text" name="" value="{{linkedInLink}}">
+            <div class="input-field">
+                <input id="profileLink" placeholder="" type="text" name="profileLink" value="{{profileLink}}"><label for="profileLink">Portfolio link <em>{{profileLink}}</em></label>
+            </div>
+            <div class="input-field">
+                <input id="linkedInLink" type="text" name="linkedInLink" value="{{linkedInLink}}"><label for="linkedInLink">LinkedIn profile<em></em></label>
+            </div>
             <input type="submit" name="next" value="Submit">
+
         </form>
         {{> skills_selector}}
         <form id="saveBlurb" class="" action="index.html" method="post">
