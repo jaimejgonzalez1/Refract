@@ -1,11 +1,12 @@
 <template name="student_register">
     <section>
-        <h2>Student Registration</h2>
+        <h2>{{student_name}}</h2>
         <form class="" action="index.html" method="post">
-            <label for="">Portfolio link:</label><input type="text" name="" value="">
-            <label for="">LinkedIn:</label><input type="text" name="" value="">
+            <label for="profileLink">Portfolio link:</label><input id="profileLink" type="text" name="" value="{{profileLink}}">
+            <label for="linkedInLink">LinkedIn: <em>http://www.linkedin.com/in/{{linkedInLink}}</em></label><input id="linkedInLink" type="text" name="" value="{{linkedInLink}}">
             <input type="submit" name="next" value="Submit">
         </form>
+<<<<<<< HEAD
         <div class="panel-group">
           <div class="panel panel-default">
         <form class="skills" action="index.html" method="post">
@@ -29,27 +30,18 @@
                     </li>
                 {{/each}}
             </ul>
+=======
+        {{> skills_selector}}
+        <form id="saveBlurb" class="" action="index.html" method="post">
+            <textarea name="name" rows="8" cols="80">{{blurb}}</textarea>
+            <input type="submit" class="btn" name="" value="Save changes">
         </form>
-      </div>
-      </div>
-
-        <!-- skills form -->
-
-
-
-
-
-
-
-        <!-- <ul>
-        {{#each project in projects}}
-            <li>
-                {{project.project_name}}
-                <form class="applyProjectSubmit" action="index.html" method="post">
-                    <input type="submit" name="project" value="{{project._id}}">
-                </form>
-            </li>
-        {{/each}}
-        </ul> -->
+        <form class="" action="index.html" method="post">
+            <!-- image upload -->
+        </form>
+        <form class="" action="index.html" method="post">
+            <input type="submit" class="btn" name="" value="Go To My Dashboard">
+>>>>>>> master
+        </form>
     </section>
 </template>
