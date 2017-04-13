@@ -1,5 +1,9 @@
-import { Meteor } from 'meteor/meteor';
-import { Template } from 'meteor/templating';
+import {
+    Meteor
+} from 'meteor/meteor';
+import {
+    Template
+} from 'meteor/templating';
 // import '../../skillsCollection.js';
 import './studentregister.html';
 
@@ -7,38 +11,81 @@ var skillsCollection = loadSkills();
 
 Skills = new Mongo.Collection(null);
 
-skillsCollection.forEach(function(skill) {Skills.insert(skill)});
+skillsCollection.forEach(function(skill) {
+    Skills.insert(skill)
+});
 
 // var tom = Persons.findOne({ name: 'Tom' });
 
 Template.student_register.helpers({
     'parent_skills': function() {
         // console.log(Projects.find().count());
-        return Skills.find({parent_id: undefined});
+        return Skills.find({
+            parent_id: undefined
+        });
     },
     'child_skills': function() {
         // console.log(Projects.find().count());
         console.log(this);
         // console.log(skill);
         // console.log(child);
-        return Skills.find({parent_id: this.id});
+        return Skills.find({
+            parent_id: this.id
+        });
     },
 });
 
+
 Template.student_register.events({
-    'submit .applyProjectSubmit'(event, wut) {
+    'click .toggle-checked' (event, wut) {
+        console.log(event);
+        console.log(this._id);
+        console.log(event.target.checked);
+        var checked = event.target.checked;
+        if (checked) {
+            if (Meteor.user().profile.skills_arr) {
+                // push into skills_arr
+                Meteor.users.update({
+                    _id: Meteor.userId()
+                }, {
+                    $push: {
+                        "profile.skills_arr": this._id
+                    }
+                });
+
+
+            } else {
+                // create skills_arr
+                // push into skills array
+            }
+        } else {
+            // remove skill from skills_arr
+        }
+
+
+    },
+
+
+
+
+
+
+    'submit .applyProjectSubmit' (event, wut) {
         event.preventDefault();
         console.log(event.target.project.value);
-            console.log(Projects.update({_id: event.target.project.value}, {
-                $push: { "applied": Meteor.userId() }
-            }));
+        console.log(Projects.update({
+            _id: event.target.project.value
+        }, {
+            $push: {
+                "applied": Meteor.userId()
+            }
+        }));
     }
 });
 
 
 function loadSkills() {
-    return [
-        {
+    return [{
             id: "1",
             skill_name: "Business",
             parent_id: undefined
