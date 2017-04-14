@@ -14,10 +14,13 @@
         else
         {{> project_view}}
     else
-        if student
-        {{> project_search}}
+        if profile created
+            if student
+            {{> project_search}}
+            else
+            {{> pretend project?}}
         else
-        {{> pretend project?}}
+            {{> profile_editor}} (student register)
     -->
 </template>
 
