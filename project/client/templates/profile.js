@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
-import './studentregister.html';
+import './profile.html';
 
 
-Template.student_register.helpers({
+Template.profile.helpers({
     'student_name': function() {
         return Meteor.user().username;
     },
@@ -19,12 +19,12 @@ Template.student_register.helpers({
     },
 });
 
-Template.student_register.rendered = function(){
+Template.profile.rendered = function(){
   $('.collapsible').collapsible();
   Materialize.updateTextFields();
 }
 
-Template.student_register.events({
+Template.profile.events({
     'submit #saveBlurb'(evt, wut) {
         evt.preventDefault();
         var text = evt.target[0].value;
