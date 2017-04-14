@@ -1,15 +1,24 @@
 <template name="dash">
     <main>
-        <!-- <div class="row">
-        <div class="col s6">
-        <label for="search">Search</label>
-        <input placeholder="" id="search" type="text" class="validate">
-    </div>
-</div> -->
 {{> project_edit}}
 {{> project_view}}
 </main>
 {{> dash_nav}}
+</template>
+
+<template name="project_space">
+    <!--
+    if project selected
+        if project owner
+        {{> project_edit}}
+        else
+        {{> project_view}}
+    else
+        if student
+        {{> project_search}}
+        else
+        {{> pretend project?}}
+    -->
 </template>
 
 <template name="project_edit">
@@ -23,7 +32,7 @@
             <textarea id="project_desc_edit" name="name" rows="8" cols="80">{{project_desc}}</textarea>
             <h4>Project Due Date</h4>
             <input id="expiry_date_edit" type="date">
-            <!-- <input type="date"> -->
+            <input type="submit" name="" value="Save Project" class="btn">
         </div>
         {{> project_skills}}
     </div>

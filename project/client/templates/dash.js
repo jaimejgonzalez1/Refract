@@ -6,8 +6,6 @@ import './dash.html';
 
 Meteor.subscribe('projects', Meteor.userId());
 
-// Projects.find({owner_id: Meteor.userId()}).count()
-
 Template.project_skills.helpers({
     'checked': function() {
         console.log(Session.get('open_project'));
