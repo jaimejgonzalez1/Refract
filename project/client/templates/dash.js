@@ -6,6 +6,36 @@ import './dash.html';
 
 Meteor.subscribe('projects', Meteor.userId());
 
+Template.project_space.helpers({
+    search_type() {
+        return Session.get('search_type');
+    },
+    isProjectOwner() {
+        console.log(true);
+        console.log(this.owner_id);
+        return (Meteor.userId() == this.owner_id);
+    },
+    list_projects() {
+        var search_type = Session.get('search_type');
+        console.log(search_type);
+        console.log(Projects.findOne({}));
+        if (search_type==''||search_type==undefined) {
+            return Projects.find({});
+        }
+        if (search_type=='created') {
+            return Projects.find({owner_id: Meteor.userId()});
+        }
+        if (search_type=='applied') {
+            // return projects from ids stored in applied array
+            return Projects.find({},{});
+        }
+        if (search_type=='saved') {
+            // return projects from ids stored in saved array
+            return Projects.find({},{});
+        }
+    },
+});
+
 Template.dash.helpers({
     isOrg() {
         return (Meteor.user().profile.type === "aa");
@@ -15,14 +45,14 @@ Template.dash.helpers({
     },
 });
 
-Template.project_space.helpers({
-    isProjectOwner() {
-        return (Projects.findOne(Session.get('open_project')).owner_id === Meteor.userId());
-    },
-    isProjectLaunched() {
-        // return;
-    },
-});
+// Template.project_space.helpers({
+//     isProjectOwner() {
+//         return (Projects.findOne(Session.get('open_project')).owner_id === Meteor.userId());
+//     },
+//     isProjectLaunched() {
+//         // return;
+//     },
+// });
 
 Template.project_skills.helpers({
     'checked': function() {
@@ -98,10 +128,12 @@ Template.dash_nav.events({
             applicants: [],
         }));
     },
-    "click [data-action='link']": function () {
+    "click [data-action='link']": function (evt) {
     // set current project
-    console.log(this._id);
-        Session.set('open_project', this._id)
+    console.log(this);
+    console.log(evt);
+    console.log(evt.target.dataset.searchType);
+        Session.set('search_type', evt.target.dataset.searchType)
     }
 });
 
