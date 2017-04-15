@@ -2,11 +2,6 @@
     <section>
         <h3>{{student_name}}</h3>
         <form class="" action="index.html" method="post">
-<<<<<<< HEAD:client/templates/student/studentregister.html
-            <label for="profileLink">Portfolio (Optional)</label><input placeholder="http://www.example.com/in/" id="profileLink" type="text" name="" value="{{profileLink}}">
-            <label for="linkedInLink">LinkedIn: (Optional) <!--em>http://www.linkedin.com/in/{{linkedInLink}}</em--></label><input placeholder="http://www.linkedin.com/in/" id="linkedInLink" type="text" name="" value="{{linkedInLink}}">
-        </form>
-=======
             <div class="input-field">
                 <input id="profileLink" type="text" name="profileLink" value="{{profileLink}}"><label for="profileLink">Portfolio link <em>{{profileLink}}</em></label>
             </div>
@@ -18,11 +13,11 @@
             <img style="max-width: 300px;" src="default.JPG" alt="">
         </figure>
         <form class="" action="index.html" method="post">
-            
+
         </form>
         {{> skills_selector}}
         <h4>Blurb</h4>
->>>>>>> e95af73ff75b98f5057050c314e1debca1566adc:project/client/templates/profile.html
+
         <form id="saveBlurb" class="" action="index.html" method="post">
             <!--Here is goes the bio thing-->
             <textarea placeholder="bio" name="name" rows="8" cols="80">{{blurb}}</textarea>
