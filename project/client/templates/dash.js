@@ -6,6 +6,24 @@ import './dash.html';
 
 Meteor.subscribe('projects', Meteor.userId());
 
+Template.dash.helpers({
+    isOrg() {
+        return (Meteor.user().profile.type === "aa");
+    },
+    isStudent() {
+        return (Meteor.user().profile.type === "bb");
+    },
+});
+
+Template.project_space.helpers({
+    isProjectOwner() {
+        return (Projects.findOne(Session.get('open_project')).owner_id === Meteor.userId());
+    },
+    isProjectLaunched() {
+        // return;
+    },
+});
+
 Template.project_skills.helpers({
     'checked': function() {
         console.log(Session.get('open_project'));
@@ -52,7 +70,15 @@ Template.dash_nav.helpers({
     },
     'projects_applied': function() {
         // get projects owned
-        return;
+        return Projects.find({owner_id: Meteor.userId()});
+    },
+    'projects_saved': function() {
+        // get projects owned
+        return Projects.find({owner_id: Meteor.userId()});
+    },
+    'projects_inprogress': function() {
+        // get projects owned
+        return Projects.find({owner_id: Meteor.userId()});
     },
 
 });

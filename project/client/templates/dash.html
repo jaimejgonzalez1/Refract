@@ -1,27 +1,36 @@
 <template name="dash">
     <main>
-{{> project_edit}}
-{{> project_view}}
-</main>
-{{> dash_nav}}
+        <!-- {{#if isOrg}}
+        {{> organization}}
+        {{/if}}
+        {{#if isStudent}} -->
+
+        {{> project_space}}
+    </main>
+    {{> dash_nav}}
 </template>
 
 <template name="project_space">
+    {{#if isProjectOwner}}
+    {{> project_edit}}
+    {{else}}
+    {{> project_view}}
+    {{/if}}
     <!--
     if project selected
-        if project owner
-        {{> project_edit}}
-        else
-        {{> project_view}}
+    if project owner
+    {{> project_edit}}
     else
-        if profile created
-            if student
-            {{> project_search}}
-            else
-            {{> pretend project?}}
-        else
-            {{> profile_editor}} (student register)
-    -->
+    {{> project_view}}
+    else
+    if profile created
+    if student
+    {{> project_search}}
+    else
+    {{> pretend project?}}
+    else
+    {{> profile_editor}} (student register)
+-->
 </template>
 
 <template name="project_edit">
@@ -55,40 +64,41 @@
             <a href="#" class="brand-logo logo">REFRACT</a>
         </div>
         <div id="">
-                {{#if has_projects}}
-                <h4>My projects</h4>
-                <ul>
-                    {{#each projects_owned}}
-                    <li><a data-action='link' href="#">{{project_name}}</a></li>
+            {{#if has_projects}}
+            <h4>Created</h4>
+            <ul>
+                {{#each projects_owned}}
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
                 {{/each}}
-                </ul>
-                {{else}}
-                <h4>You have not created any projects yet!!</h4>
-                {{/if}}
-                <ul>
+            </ul>
+            <h4>Applied</h4>
+            <ul>
                 {{#each projects_applied}}
-                    <li><a href="#">{{project_name}}</a></li>
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
                 {{/each}}
-                </ul>
-                <ul>
+            </ul>
+            <h4>Saved</h4>
+            <ul>
+                {{#each projects_saved}}
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
+                {{/each}}
+            </ul>
+            <h4>In Progress</h4>
+            <ul>
+                {{#each projects_inprogress}}
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
+                {{/each}}
+            </ul>
+            {{else}}
+            <h4>You have not created any projects yet!!</h4>
+            {{/if}}
+            <ul>
                 <div class="divider">
                 </div>
                 <form class="" id="new_project" action="index.html" method="post">
                     <input type="submit" class="btn" name="new_project" value="CREATE NEW PROJECT!">
                 </form>
-                <form class="Applied">
-                    <input class="btn" type="submit" name="Applied" value="Applied">
-                </form>
-                  <form class="Created">
-                      <input class="btn" type="submit" name="Created" value="Created">
-                  </form>
-                  <form class="Saved">
-                      <input class="btn" type="submit" name="Saved" value="Saved">
-                  </form>
-                  <form class="In Progress">
-                      <input class="btn" type="submit" name="In Progress" value="In Progress">
-                  </form>
-                </ul>
+            </ul>
         </div>
         <div>
             <div class="divider"></div>
