@@ -49,31 +49,32 @@ h4{
   .navigation{
     padding-top: 17px;
   }
+
   /* label focus color */
     .input-field input[type=text]:focus + label {
-      color: #e91e63;
+      color: #6cdfea;
  }
  /* label underline focus color */
     .input-field input[type=text]:focus {
-      border-bottom: 1px solid #e91e63;
-      box-shadow: 0 1px 0 0 #e91e63;
+      border-bottom: 1px solid #6cdfea;
+      box-shadow: 0 1px 0 0 #6cdfea;
     }
 
       /* label focus color */
         .input-field input[type=email]:focus + label {
-          color: #e91e63;
+          color: #6cdfea;
      }
      /* label underline focus color */
         .input-field input[type=email]:focus {
-          border-bottom: 1px solid #e91e63;
-          box-shadow: 0 1px 0 0 #e91e63;
+          border-bottom: 1px solid #6cdfea;
+          box-shadow: 0 1px 0 0 #6cdfea;
         }
         /* label focus color */
           .input-field input[type=password]:focus + label {
-            color: #e91e63;
+            color: #6cdfea;
        }
        /* label underline focus color */
           .input-field input[type=password]:focus {
-            border-bottom: 1px solid #e91e63;
-            box-shadow: 0 1px 0 0 #e91e63;
+            border-bottom: 1px solid #6cdfea;
+            box-shadow: 0 1px 0 0 #6cdfea;
           }
