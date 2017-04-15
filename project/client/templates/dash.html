@@ -44,7 +44,6 @@
             <textarea id="project_desc_edit" name="name" rows="8" cols="80">{{project_desc}}</textarea>
             <h4>Project Due Date</h4>
             <input id="expiry_date_edit" type="date">
-            <input type="submit" name="" value="Save Project" class="btn">
         </div>
         {{> project_skills}}
     </div>
@@ -162,6 +161,9 @@
         <div class="col offset-s8">
             <input type="submit" id="apply_project" name="apply_project" class="btn" value="Apply to project">
         </div>
+        <div class="col offset-s8">
+        <input type="submit" name="" value="Save Project" class="btn">
+    </div>
     </div>
     {{/with}}
 </template>
