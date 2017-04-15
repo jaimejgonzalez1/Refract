@@ -12,17 +12,23 @@
 <div class="row">
     <div class="col s12">
         {{#if isLoggedIn}}
-        {{> dash}}
+          {{> dash}}
         {{else}}
         <style media="screen">
-        .at-form > .at-pwd-form .row:nth-of-type(3) {
+        /*.at-form > .at-pwd-form .row:nth-of-type(3) {
             width: 20%;
-        }
+        }*/
         .at-btn{
             width: 20%;
         }
         </style>
-        {{> atForm}}
+        <div class="">
+
+        </div>
+        <div class="sign-page">
+          <h6 class="logo">REFRACT</h6>
+          {{> atForm}}
+        </div>
         {{/if}}
     </div>
 </div>
