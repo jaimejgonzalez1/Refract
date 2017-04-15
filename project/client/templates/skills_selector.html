@@ -1,0 +1,26 @@
+<template name="skills_selector">
+    <section>
+        <form class="skills" action="index.html" method="post">
+            <ul class="collapsible" data-collapsible="accordion">
+                {{#each parent_skills}}
+                    <li>
+
+                      <div class="collapsible-header">
+                          <span class="material-icons">{{skill_name}}</span>
+                      </div>
+                      <div id="" class="collapsible-body">
+                        <ul>
+                            {{#each child_skills}}
+                                <li>
+                                    <input class="skill-input" id="{{_id}}" type="checkbox" name="" value="" checked="{{checked}}"><label for="{{_id}}">{{skill_name}}</label>
+                                </li>
+                            {{/each}}
+                        </ul>
+                      </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </form>
+
+    </section>
+</template>

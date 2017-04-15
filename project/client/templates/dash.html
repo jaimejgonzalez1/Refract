@@ -1,0 +1,169 @@
+<template name="dash">
+    <main>
+        <!-- {{#if isOrg}}
+        {{> organization}}
+        {{/if}}
+        {{#if isStudent}} -->
+        <!-- {{> profile}} -->
+        {{> project_space}}
+    </main>
+    {{> dash_nav}}
+</template>
+
+<template name="project_space">
+    {{#if isProjectOwner}}
+    {{> project_edit}}
+    {{else}}
+    {{> project_view}}
+    {{/if}}
+    <!--
+    if project selected
+    if project owner
+    {{> project_edit}}
+    else
+    {{> project_view}}
+    else
+    if profile created
+    if student
+    {{> project_search}}
+    else
+    {{> pretend project?}}
+    else
+    {{> profile_editor}} (student register)
+-->
+</template>
+
+<template name="project_edit">
+    {{#with open_project}}
+    <div class="row">
+        <div class="col s8">
+            <h3>PROJECT EDIT</h3>
+            <h4>{{project_name}}</h4>
+            <input type="text" id="project_name_edit" name="project_name_edit" value="{{project_name}}">
+            <h4>Description</h4>
+            <textarea id="project_desc_edit" name="name" rows="8" cols="80">{{project_desc}}</textarea>
+            <h4>Project Due Date</h4>
+            <input id="expiry_date_edit" type="date">
+        </div>
+        {{> project_skills}}
+    </div>
+    <div class="row">
+        <div class="col offset-s8">
+            <form class="" id="launch_project" action="index.html" method="post">
+                <input type="submit" class="btn" name="launch_project" value="Launch project">
+            </form>
+        </div>
+    </div>
+    {{/with}}
+</template>
+
+<template name="dash_nav">
+    <div id="slide-out" class="side-nav fixed">
+        <div class="row">
+            <a href="#" class="brand-logo logo">REFRACT</a>
+        </div>
+        <div id="">
+            {{#if has_projects}}
+            <h4>Created</h4>
+            <ul>
+                {{#each projects_owned}}
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
+                {{/each}}
+            </ul>
+            <h4>Applied</h4>
+            <ul>
+                {{#each projects_applied}}
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
+                {{/each}}
+            </ul>
+            <h4>Saved</h4>
+            <ul>
+                {{#each projects_saved}}
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
+                {{/each}}
+            </ul>
+            <h4>In Progress</h4>
+            <ul>
+                {{#each projects_inprogress}}
+                <li><a data-action='link' href="#">{{project_name}}</a></li>
+                {{/each}}
+            </ul>
+            {{else}}
+            <h4>You have not created any projects yet!!</h4>
+            {{/if}}
+            <ul>
+                <div class="divider">
+                </div>
+                <form class="" id="new_project" action="index.html" method="post">
+                    <input type="submit" class="btn" name="new_project" value="CREATE NEW PROJECT!">
+                </form>
+            </ul>
+        </div>
+        <div>
+            <div class="divider"></div>
+            <form class="logout">
+                <input class="btn" type="submit" name="logout" value="logout">
+            </form>
+        </div>
+    </div>
+</template>
+
+<template name="project_skills">
+    <div class="col s4">
+        <h4>Skills</h4>
+        <form class="" action="index.html" method="post">
+            <ul class="collapsible" data-collapsible="accordion">
+                {{#each parent_skills}}
+                <li>
+                    <div class="collapsible-header">
+                        <span class="material-icons">{{skill_name}}</span>
+                    </div>
+                    <div id="" class="collapsible-body">
+                        <ul>
+                            {{#each child_skills}}
+                            <li>
+                                <input class="proj-skill-input" id="{{_id}}" type="checkbox" name="" value="" checked="{{checked}}"><label for="{{_id}}">{{skill_name}}</label>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </form>
+    </div>
+</template>
+
+<template name="project_view">
+    {{#with open_project}}
+    <div class="row">
+        <div class="col s8">
+            <h3>PROJECT VIEW</h3>
+            <h4>{{project_name}}</h4>
+            <h4>Description</h4>
+            <p>{{project_desc}}</p>
+            <h4>Project Due Date</h4>
+            <p>{{date_expiry}}</p>
+            <h4>Date created</h4>
+            <p>{{date_added}}</p>
+            <h4>Date launched</h4>
+            <p>{{date_launched}}</p>
+            <h4>Status</h4>
+            <p>{{status}}</p>
+        </div>
+        <ul>
+            {{#each skills}}
+            <li>{{skill_name}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col offset-s8">
+            <input type="submit" id="apply_project" name="apply_project" class="btn" value="Apply to project">
+        </div>
+        <div class="col offset-s8">
+        <input type="submit" name="" value="Save Project" class="btn">
+    </div>
+    </div>
+    {{/with}}
+</template>

@@ -1,0 +1,11 @@
+<template name="project_search">
+    <h3>search</h3>
+    <input type="text" name="" value="">
+    <h4>Projects you might be intersted in</h4>
+    <ul>
+        {{#each projects}}
+            <li>{{project_name}}</li>
+        {{/each}}
+    </ul>
+    <!-- infinite scrolling needed -->
+</template>
