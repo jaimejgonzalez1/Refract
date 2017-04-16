@@ -1,0 +1,36 @@
+<template name="project_space">
+    <!-- {{projects_list}} -->
+    <ul>
+        {{#each list_projects}}
+        <li>
+            <!-- <a data-action='' href="#">{{project_name}}</a> -->
+            <!-- {{> project_edit}} -->
+            <!-- {{else}} -->
+            {{#if isProjectOwner}}
+            {{> project_edit}}
+            {{else}}
+            {{> project_view}}
+            {{/if}}
+            <!-- {{/if}} -->
+        </li>
+
+        {{/each}}
+    </ul>
+
+
+    <!--
+    if project selected
+    if project owner
+    {{> project_edit}}
+    else
+    {{> project_view}}
+    else
+    if profile created
+    if student
+    {{> project_search}}
+    else
+    {{> pretend project?}}
+    else
+    {{> profile_editor}} (student register)
+    -->
+</template>

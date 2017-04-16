@@ -1,0 +1,50 @@
+
+<template name="project_edit">
+    <!-- {{#with open_project}} -->
+    <div class="row">
+        <div class="col s8">
+            <!-- <h3>PROJECT EDIT</h3> -->
+            <h4>{{project_name}}</h4>
+            <input type="text" id="project_name_edit" name="project_name_edit" value="{{project_name}}">
+            <h4>Description</h4>
+            <textarea id="project_desc_edit" name="name" rows="8" cols="80">{{project_desc}}</textarea>
+            <h4>Project Due Date</h4>
+            <input id="expiry_date_edit" type="date">
+        </div>
+        {{> project_skills}}
+    </div>
+    <div class="row">
+        <div class="col offset-s8">
+            <form class="" id="launch_project" action="index.html" method="post">
+                <input type="submit" class="btn" name="launch_project" value="Launch project">
+            </form>
+        </div>
+    </div>
+    <!-- {{/with}} -->
+</template>
+
+<template name="project_skills">
+    <div class="col s4">
+        <h4>Skills</h4>
+        <form class="" action="index.html" method="post">
+            <ul class="collapsible" data-collapsible="accordion">
+                {{#each parent_skills}}
+                <li>
+                    <div class="collapsible-header">
+                        <span class="material-icons">{{skill_name}}</span>
+                    </div>
+                    <div id="" class="collapsible-body">
+                        <ul>
+                            {{#each child_skills}}
+                            <li>
+                                <input class="proj-skill-input" id="{{_id}}" type="checkbox" name="" value="" checked="{{checked}}"><label for="{{_id}}">{{skill_name}}</label>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </form>
+    </div>
+</template>

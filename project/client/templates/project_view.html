@@ -1,0 +1,33 @@
+<template name="project_view">
+    <!-- {{#with open_project}} -->
+    <div class="row">
+        <div class="col s8">
+            <!-- <h3>PROJECT VIEW</h3> -->
+            <h4>{{project_name}}</h4>
+            <h4>Description</h4>
+            <p>{{project_desc}}</p>
+            <h4>Project Due Date</h4>
+            <p>{{date_expiry}}</p>
+            <h4>Date created</h4>
+            <p>{{date_added}}</p>
+            <h4>Date launched</h4>
+            <p>{{date_launched}}</p>
+            <h4>Status</h4>
+            <p>{{status}}</p>
+        </div>
+        <ul>
+            {{#each skills}}
+            <li>{{skill_name}}</li>
+            {{/each}}
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col offset-s8">
+            <input type="submit" id="apply_project" name="apply_project" class="btn" value="Apply to project">
+        </div>
+        <div class="col offset-s8">
+            <input type="submit" name="" value="Save Project" class="btn">
+        </div>
+    </div>
+    <!-- {{/with}} -->
+</template>
