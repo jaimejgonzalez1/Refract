@@ -12,10 +12,11 @@
 
 
 <template name="dash_nav">
-    <div id="slide-out" class="side-nav fixed">
-        <div class="row">
-            <a href="#" class="brand-logo logo">REFRACT</a>
-        </div>
+  <div class="side-nav-fixtop">
+      <div style="position:fixed;top:0;">
+        <h6 class="logo">REFRACT</h6>
+      </div>
+    <div id="slide-out" class="side-nav fixed  z-depth-0">
         <div id="">
             <ul>
                 <!-- {{#if has_projects}} -->
@@ -40,21 +41,18 @@
                 <!-- {{else}} -->
                 <!-- <h4>You have not created any projects yet!!!!!</h4> -->
                 <!-- {{/if}} -->
-
             </ul>
             <ul>
-                <div class="divider">
-                </div>
-                <form class="" id="new_project" action="index.html" method="post">
-                    <input type="submit" class="btn" name="new_project" value="CREATE NEW PROJECT!">
-                </form>
             </ul>
         </div>
-        <div>
-            <div class="divider"></div>
-            <form class="logout">
-                <input class="btn" type="submit" name="logout" value="logout">
-            </form>
-        </div>
     </div>
+    <div class="side-nav-fixdown">
+      <form class="" id="new_project" action="index.html" method="post">
+          <input type="submit" class="btn" name="new_project" value="CREATE NEW PROJECT!">
+      </form>
+        <form class="logout">
+            <input class="btn" type="submit" name="logout" value="logout">
+        </form>
+    </div>
+  </div>
 </template>

@@ -70,41 +70,62 @@ h4{
     float: right;
     padding-right: 30px;
   }
-
-  .navigation{
-    padding-top: 17px;
-  }
-
-  /* label focus color */
+    /* label focus color */
     .input-field input[type=text]:focus + label {
-      color: var(--color-pink);
- }
- /* label underline focus color */
+    color: var(--color-blue);
+    }
+    /* label underline focus color */
     .input-field input[type=text]:focus {
-      border-bottom: 1px solid var(--color-pink);
-      box-shadow: 0 1px 0 0 var(--color-pink);
+    border-bottom: 1px solid var(--color-blue);
+    box-shadow: 0 1px 0 0 var(--color-blue);
     }
 
-      /* label focus color */
-        .input-field input[type=email]:focus + label {
-          color: var(--color-pink);
-     }
-     /* label underline focus color */
-        .input-field input[type=email]:focus {
-          border-bottom: 1px solid var(--color-pink);
-          box-shadow: 0 1px 0 0 #6cdfea;
-        }
-        /* label focus color */
-          .input-field input[type=password]:focus + label {
-            color: var(--color-pink);
-       }
-       /* label underline focus color */
-          .input-field input[type=password]:focus {
-            border-bottom: 1px solid var(--color-pink);
-            box-shadow: 0 1px 0 0 var(--color-pink);
-          }
+    /* label focus color */
+    .input-field input[type=email]:focus + label {
+    color: var(--color-blue);
+    }
+    /* label underline focus color */
+    .input-field input[type=email]:focus {
+    border-bottom: 1px solid var(--color-blue);
+    box-shadow: 0 1px 0 0 #6cdfea;
+    }
+    /* label focus color */
+    .input-field input[type=password]:focus + label {
+    color: var(--color-blue);
+    }
+    /* label underline focus color */
+    .input-field input[type=password]:focus {
+    border-bottom: 1px solid var(--color-blue);
+    box-shadow: 0 1px 0 0 var(--color-blue);
+    }
+
+/*SIDE NAV CRAZYNESS--------------------------------------------*/
 
 
+.side-nav {
+   top: 45px;
+   height: calc(100% - 81px);
+   background-color: transparent;
+   /*color: white;*/
+}
+.side-nav-fixtop{
+  background-color: white;
+  width: 300px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding-left: 20px;
+  border-right: 1px solid black;
+}
+.side-nav-fixdown{
+  background-color: white;
+  width: 300px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid black;
+}
 
 /*Sign in form-------------------------------------------------------------------*/
 .sign-page{
@@ -128,13 +149,9 @@ h4{
 .at-signup-link{
   margin: auto;
 }
- @media (max) {
-
- }
 .at-input:nth-of-type(n+2 ){
   display: inline;
 }
-
 .at-link{
   font-weight: 400;
 }
