@@ -10,7 +10,6 @@
     {{> dash_nav}}
 </template>
 
-
 <template name="dash_nav">
   <div class="side-nav-fixtop">
       <div style="position:fixed;top:0;">
@@ -20,27 +19,15 @@
         <div id="">
             <ul>
                 <!-- {{#if has_projects}} -->
-                <li><a data-action="link" data-search-type="created" href="#">Created</a></li>
-                <!-- <ul>
-                    {{#each projects_owned}}
-                    <li><a data-action='link' href="#">{{project_name}}</a></li>
-                    {{/each}}
-                </ul> -->
-                <li><a data-action="link" data-search-type="applied" href="#">Applied</a></li>
-                <!-- <ul>
-                    {{#each projects_applied}}
-                    <li><a data-action='link' href="#">{{project_name}}</a></li>
-                    {{/each}}
-                </ul> -->
-                <li><a data-action="link" data-search-type="saved" href="#">Saved</a></li>
-                <!-- <ul>
-                    {{#each projects_saved}}
-                    <li><a data-action='link' href="#">{{project_name}}</a></li>
-                    {{/each}}
-                </ul> -->
+                <li><a data-action="link" data-template="list_projects" data-search-type="" href="#">All Projects</a></li>
+                <li><a data-action="link" data-template="list_projects" data-search-type="created" href="#">Created</a></li>
+                <li><a style="text-decoration: line-through;" data-action="link" data-template="list_projects" data-search-type="applied" href="#">Applied</a></li>
+                <li><a style="text-decoration: line-through;" data-action="link" data-template="list_projects" data-search-type="saved" href="#">Saved</a></li>
                 <!-- {{else}} -->
                 <!-- <h4>You have not created any projects yet!!!!!</h4> -->
                 <!-- {{/if}} -->
+                <!-- {{#if isStudent}} -->
+                <li><a data-action="link" data-template="profile" data-search-type="saved" href="#">Profile</a></li>
             </ul>
             <ul>
             </ul>
@@ -50,9 +37,6 @@
       <form class="" id="new_project" action="index.html" method="post">
           <input type="submit" class="btn" name="new_project" value="CREATE NEW PROJECT!">
       </form>
-        <form class="logout">
-            <input class="btn" type="submit" name="logout" value="logout">
-        </form>
     </div>
   </div>
 </template>

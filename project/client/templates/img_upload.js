@@ -31,7 +31,6 @@ Template.img_upload.events({
         }
         template.currentUpload.set(false);
       });
-
       upload.start();
     }
   }
