@@ -79,7 +79,7 @@ Template.uploadedFiles.helpers({
    return Images.findOne({_id:Meteor.user().profile.pic_id});
  },
  hasImage: function () {
-return (Meteor.user().profile.pic_id !== "" || Meteor.user().profile.pic_id !== undefined);
+return !(Meteor.user().profile.pic_id == "" || Meteor.user().profile.pic_id == undefined);
 },
 
 });
