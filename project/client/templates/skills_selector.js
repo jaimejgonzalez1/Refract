@@ -17,7 +17,6 @@ Template.skills_selector.helpers({
         return Skills.find({parent_id: undefined});
     },
     'child_skills': function() {
-        console.log(this);
         return Skills.find({parent_id: this.id});
     },
 });
