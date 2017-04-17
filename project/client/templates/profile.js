@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
 
 import './profile.html';
-
 
 Template.profile.helpers({
     'student_name': function() {

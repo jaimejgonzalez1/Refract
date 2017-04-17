@@ -140,3 +140,6 @@ Meteor.publish('projects', function() {
 // //         return Skills.find();
 // //     }
 // // });
+  // Meteor.publish('files.images.all', function () {
+  //   return Images.find().cursor;
+  // });

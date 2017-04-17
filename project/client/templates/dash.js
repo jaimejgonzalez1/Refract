@@ -58,9 +58,9 @@ Template.dash_nav.events({
     },
     "click [data-action='link']": function (evt) {
     // set current project
-    console.log(this);
-    console.log(evt);
+    // load template
     console.log(evt.target.dataset.searchType);
-        Session.set('search_type', evt.target.dataset.searchType)
+    Session.set('search_type', evt.target.dataset.searchType);
+    Session.set('template_loaded', evt.target.dataset.template);
     }
 });

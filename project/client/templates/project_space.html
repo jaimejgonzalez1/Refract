@@ -1,23 +1,8 @@
 <template name="project_space">
     <!-- {{projects_list}} -->
-    <ul>
-        {{#each list_projects}}
-        <li>
-            <!-- <a data-action='' href="#">{{project_name}}</a> -->
-            <!-- {{> project_edit}} -->
-            <!-- {{else}} -->
-            {{#if isProjectOwner}}
-            {{> project_edit}}
-            {{else}}
-            {{> project_view}}
-            {{/if}}
-            <!-- {{/if}} -->
-        </li>
+    <!-- {{> list_projects}} -->
 
-        {{/each}}
-    </ul>
-
-
+    {{> Template.dynamic template=template_loaded}}
     <!--
     if project selected
     if project owner
@@ -33,4 +18,27 @@
     else
     {{> profile_editor}} (student register)
     -->
+</template>
+
+<template name="list_projects">
+    <ul>
+        {{#each list_projects}}
+        <li data-action="link" data-template="project_full" style="border: solid 1px;"><a href="#"><h3>{{project_name}}{{#if isProjectOwner}}***{{/if}}</h3></a></li>
+        <!-- <li>
+
+        </li> -->
+        {{/each}}
+    </ul>
+</template>
+
+<template name="project_full">
+    <section>
+        {{#with open_project}}
+        {{#if isProjectOwner}}
+        {{> project_edit}}
+        {{else}}
+        {{> project_view}}
+        {{/if}}
+        {{/with}}
+    </section>
 </template>
