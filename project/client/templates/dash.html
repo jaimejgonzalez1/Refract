@@ -3,27 +3,28 @@
     <div class="nav-wrapper">
 
         <a class="brand-logo logo" href="#">REFRACT</a>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-        <ul class='right'>
-          <li><a href="#">About</a></li>
-          <li><div class="input-field">
-            <input id="search" type="search" required>
-           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-           <i class="material-icons">close</i>
-          </div></li>
-          <li>
-            <div class="gray">
-              <img src="" alt="">
-              <a data-action="link" data-template="profile" data-search-type="saved" href="#">{{student_name}}Profile</a>
-            </div>
-          </li>
-        </ul>
-
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="tiny material-icons">menu</i></a>
+          <ul class='right hide-on-med-and-down'>
+            <li><a href="#">About</a></li>
+            <li><div class="input-field">
+              <form class="" action="index.html" method="post">
+               <input id="search" type="search">
+               <label class="label-icon" for="search" style="left=0px!important;"><i class="small material-icons">search</i></label>
+               <i class="material-icons">close</i>
+              </form>
+            </div></li>
+            <li>
+              <!-- <div class="gray"> -->
+                <!-- <img src="" alt=""> -->
+                <a data-action="link" data-template="profile" data-search-type="saved" href="#">{{student_name}}Profile</a>
+              <!-- </div> -->
+            </li>
+          </ul>
     </div>
     </nav>
       <ul class="tabs tabs-fixed-width">
             <!-- {{#if has_projects}} -->
-            <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="" href="#all_projects">All Projects</a></li>
+            <li class="tab"><a data-action="link" data-template="project_search" data-search-type="" href="#all_projects">Browse</a></li>
             <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="created" href="#created">Created</a></li>
             <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="applied" href="#applied">Applied</a></li>
             <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="saved" href="#saved">Saved</a></li>

@@ -34,16 +34,18 @@ body{
    color: #554b49;
    }
 
+   a{
+   color: black !important;
+   }
+
+    a:hover + a:focus{
+     text-decoration: none !important;
+    }
+
 .tabs{
   background-color: #f2f2f2;
 }
-a{
-color: black !important;
-}
 
- a:hover{
-  text-decoration: none;
- }
  .message{
    margin:auto;
  }
@@ -63,7 +65,7 @@ color: black !important;
   font-weight: 300i;
   font-size: 1.5em !important;
   letter-spacing: 0.5em;
-  color: var(--color-blue)!important;
+  color: black !important;
   animation: 0.5s ease-out 0.5s logo-in;
   transition: letter-spacing 0.5s;
 }
@@ -135,7 +137,23 @@ color: black !important;
     border-bottom: 1px solid var(--color-blue);
     box-shadow: 0 1px 0 0 var(--color-blue);
     }
-
+    .input-field input[type=search]{
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+    display: inline-flex;
+    }
+    .input-field input[type=search]:focus{
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+    }
+    nav .input-field input[type=search] + label i{
+      font-size: 1.3rem;
+      left: 0rem;
+      color: gray;
+    }
+    .input-field input[type=search] + label {
+      left: 0rem;
+    }
 /*SIDE NAV CRAZYNESS--------------------------------------------*/
 
 
@@ -191,4 +209,8 @@ color: black !important;
 }
 .at-link{
   font-weight: 400;
+}
+/*tabs---------------------------------*/
+.tabs .indicator {
+  background-color: var(--color-blue)!important;
 }
