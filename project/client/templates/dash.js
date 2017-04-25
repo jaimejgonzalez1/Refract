@@ -7,6 +7,10 @@ import './dash.html';
 Meteor.subscribe('projects', Meteor.userId());
 Meteor.subscribe('files.images.all');
 
+Template.dash_nav.rendered = function() {
+    $('ul.tabs').tabs();
+  }
+
 Template.dash.helpers({
     isOrg() {
         return (Meteor.user().profile.type === "aa");
@@ -38,6 +42,9 @@ Template.dash_nav.helpers({
         // get projects owned
         return Projects.find({owner_id: Meteor.userId()});
     },
+    'student_name': function() {
+        return Meteor.user().username;
+    }
 
 });
 

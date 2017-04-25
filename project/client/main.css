@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300i,400,400i,700i,900|Roboto:300,400');
-
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 /*------------------VARIABLES ------------------*/
 :root{
   /*Colors*/
-  --color-pink: #e91e63;
-  --color-blue: #6cdfea;
-  --color-gray: #554b49;
+  --color-pink: #F1517D;
+  --color-blue: rgb(36,96,251);
+  --color-purple: #cc33ff;
+  --color-gray: #F2F2F2;
+
   /*fonts*/
   --fonts-mont: "Montserrat", sans-serif;
   --font-rob: 'Roboto', sans-serif;
@@ -18,14 +20,29 @@ body{
   font-family: var(--font-rob);
   font-weight: 300;
 }
- main {
-     padding-left: 300px;
- }
+
  h2{
    font-family: var(--fonts-mont);
    font-weight: 700;
    margin: auto;
    text-align: center;
+ }
+ h4{
+   font-family: "Montserrat", sans-serif;
+   font-weight: 300;
+   font-size: 20px;
+   color: #554b49;
+   }
+
+.tabs{
+  background-color: #f2f2f2;
+}
+a{
+color: black !important;
+}
+
+ a:hover{
+  text-decoration: none;
  }
  .message{
    margin:auto;
@@ -35,23 +52,25 @@ body{
    height: 63px;
    box-shadow: transparent !important;
    background-color: white;
-   border-bottom: 1px solid var(--color-pink);
+   /*border-bottom: 1px solid var(--color-pink);*/
    }
+
 .logo{
     /*opacity: 0;*/
   /*position: absolute;*/
   /*padding-left: 30px;*/
   font-family: var(--fonts-mont);;
   font-weight: 300i;
-  font-size: 1.5em;
+  font-size: 1.5em !important;
   letter-spacing: 0.5em;
-  color: #554b49;
+  color: var(--color-blue)!important;
   animation: 0.5s ease-out 0.5s logo-in;
   transition: letter-spacing 0.5s;
 }
 .side-nav-fixtop:hover .logo {
     letter-spacing: 0em;
 }
+
 @keyframes logo-in {
     0% {
         letter-spacing: -0.7em;
@@ -66,7 +85,12 @@ body{
 .btn{
   color: #554b49;
   background-color: white;
-  border: 1px solid var(--color-pink);
+  /*border: 1px solid var(--color-pink);*/
+}
+.btn-new-project{
+  height: 48px;
+  background-color: var(--color-pink);
+  padding: auto;
 }
 .btn:hover{
   color: white;
@@ -76,12 +100,7 @@ body{
   background-color: var(--color-pink);
 }
 
-h4{
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  font-size: 20px;
-  color: #554b49;
-  }
+
 
   .logout{
     float: right;
