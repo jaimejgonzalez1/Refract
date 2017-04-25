@@ -89,6 +89,7 @@ color: black !important;
 }
 .btn-new-project{
   height: 48px;
+  width: 100%;
   background-color: var(--color-pink);
   padding: auto;
 }
