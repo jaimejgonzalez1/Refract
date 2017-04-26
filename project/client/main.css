@@ -36,6 +36,7 @@ body{
 
    a{
    color: black !important;
+   font-weight: 400;
    }
 
     a:hover + a:focus{
