@@ -20,6 +20,9 @@ body{
   font-family: var(--font-rob);
   font-weight: 300;
 }
+main{
+  margin-top: 112px;
+}
 
  h2{
    font-family: var(--fonts-mont);
@@ -51,7 +54,7 @@ body{
    margin:auto;
  }
 
-.nav-wrapper{
+nav .nav-wrapper{
    height: 63px;
    box-shadow: transparent !important;
    background-color: white;

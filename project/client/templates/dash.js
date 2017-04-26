@@ -51,7 +51,7 @@ Template.dash_nav.helpers({
 Template.dash_nav.events({
     'submit #new_project'(evt, wut) {
         evt.preventDefault();
-        console.log(Projects.insert({
+        var projectID = Projects.insert({
             project_name: "Default name",
             project_desc: "Default description",
             date_added: new Date(),
@@ -61,7 +61,9 @@ Template.dash_nav.events({
             skills: [],
             status: "Created",
             applicants: [],
-        }));
+        });
+        Session.set('open_project', projectID);
+        Session.set('template_loaded', 'project_edit');
     },
     "click [data-action='link']": function (evt) {
     // set current project

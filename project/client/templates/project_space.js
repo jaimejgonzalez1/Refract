@@ -14,25 +14,44 @@ Template.project_space.helpers({
 });
 
 Template.list_projects.helpers({
-    list_projects() {
-        var search_type = Session.get('search_type');
-        console.log(search_type);
-        console.log(Projects.findOne({}));
-        if (search_type==''||search_type==undefined) {
-            return Projects.find({});
-        }
-        if (search_type=='created') {
-            return Projects.find({owner_id: Meteor.userId()});
-        }
-        if (search_type=='applied') {
-            // return projects from ids stored in applied array
-            return Projects.find({},{});
-        }
-        if (search_type=='saved') {
-            // return projects from ids stored in saved array
-            return Projects.find({},{});
-        }
-    },
+  list_projects() {
+      var search_type = Session.get('search_type');
+      console.log(search_type);
+      console.log(Projects.findOne({}));
+      if (search_type==''||search_type==undefined) {
+          return Projects.find({});
+      }
+      if (search_type=='created') {
+          return Projects.find({owner_id: Meteor.userId()});
+      }
+      if (search_type=='applied') {
+          // return projects from ids stored in applied array
+          return Projects.find({},{});
+      }
+      if (search_type=='saved') {
+          // return projects from ids stored in saved array
+          return Projects.find({},{});
+      }
+  },
+  header() {
+          var search_type = Session.get('search_type');
+          console.log(search_type);
+          console.log(Projects.findOne({}));
+          if (search_type==''||search_type==undefined) {
+              return 'BROWSE PROJECTS';
+          }
+          if (search_type=='created') {
+              return 'MY PROJECTS';
+          }
+          if (search_type=='applied') {
+              // return projects from ids stored in applied array
+              return 'APPLIED PROJECTS';
+          }
+          if (search_type=='saved') {
+              // return projects from ids stored in saved array
+              return 'SAVED PROJECTS';
+          }
+      },
     isProjectOwner() {
         return (Meteor.userId() == this.owner_id);
     },
