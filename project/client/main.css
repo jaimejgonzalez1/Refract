@@ -19,10 +19,19 @@
 body{
   font-family: var(--font-rob);
   font-weight: 300;
+  background: url(backptrn.svg);
+  /*background-position: center;*/
+  background-attachment: fixed;
 }
 main{
   margin-top: 112px;
-  
+
+
+
+}
+.behind{
+  z-index: 1000;
+  height: 100%;
 }
 
  h2{
@@ -37,6 +46,10 @@ main{
    font-size: 20px;
    color: #554b49;
    }
+  h5{
+    color: grey;
+    font-size: 1rem;
+  }
 
    a{
    color: black !important;
@@ -95,13 +108,15 @@ nav .nav-wrapper{
 }
 
 .btn{
-  color: #554b49;
+  color: grey;
   background-color: white;
-  /*border: 1px solid var(--color-pink);*/
-
+  border: 1px solid var(--color-blue);
+  box-shadow: none;
+  font-size: 9pt;
 }
 .btn-new-project{
   color: var(--color-pink);
+  border: none;
   height: 60px;
   width: 100%;
   background-color: transparent;
@@ -113,9 +128,11 @@ nav .nav-wrapper{
 .btn:hover{
   color: white;
   background-color: var(--color-pink);
+  border: 1px solid var(--color-pink);
 }
 .btn:focus{
   background-color: var(--color-pink);
+  color: white;
 }
 
 
@@ -322,9 +339,9 @@ padding-left:0.5em;
 .bookmark{
 position:relative;
 float:right;
-top:0.2em;
-right:0.5em;
-font-size: 17px;
+top:-0.4em;
+right:0.22em;
+font-size: 36px;
 }
 .one-card:hover{
   background-color:lightgrey;
