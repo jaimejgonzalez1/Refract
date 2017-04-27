@@ -15,8 +15,15 @@ Template.profile.helpers({
         return Meteor.user().profile.linkedInLink;
     },
     'profileLink': function() {
-        return Meteor.user().profile.profileLink;
+        return 'http://' + Meteor.user().profile.profileLink;
     },
+    'skills': function() {
+        return Skills.find({'id': {'$in': this.skills}});
+    },
+    'student_email': function() {
+        return Meteor.user().emails[0].address;
+    },
+
 });
 
 Template.profile.rendered = function(){

@@ -27,8 +27,8 @@
 
 <template name="uploadedFiles">
     {{#if hasImage}}
-    <img src="{{imageFile.link}}" alt="{{imageFile.name}}" />
+    <img class="propic" src="{{imageFile.link}}" alt="{{imageFile.name}}" />
     {{else}}
-    <img src="refract/dumpsterfire.gif" alt="">
+    <img class="propic" src="/dumpsterfire.gif" alt="">
     {{/if}}
 </template>
