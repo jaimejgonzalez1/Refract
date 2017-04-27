@@ -23,14 +23,28 @@
 <template name="list_projects">
   <div class="container">
     <h2>{{header}}</h2>
-    <div class="row">
+    <div class="row" style="margin-top:40px;">
       <div class="col s12">
         <ul>
             {{#each list_projects}}
             <li data-action="link" data-template="project_full" class="col l4 m6 s12">
-              <div class="card grey lighten-4 z-depth-0">
-                <div class="card-content">
-                    <a href="#"><span class='card-title'>{{project_name}}{{#if isProjectOwner}}***{{/if}}</span></a>
+              <div class="card grey lighten-4 z-depth-0 one-card">
+                <div class="colored">
+                  <p>Organization name
+                  <i class="material-icons bookmark">turned_in_not</i></p>
+                </div>
+                <div class="card-content inside">
+                    <a href="#"><span class='card-title activator grey-text text-darken-4 title'>{{project_name}}{{#if isProjectOwner}}***{{/if}}</span></a>
+                    <p>Hours</p>
+                </div>
+                <div class="skills">
+                   <ul>
+                     <li><span>Skill Label</span>
+                     </li>
+                     <li>
+                       Skill Label
+                     </li>
+                   </ul>
                 </div>
               </div>
             </li>
