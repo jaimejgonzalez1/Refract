@@ -29,45 +29,14 @@
             </figure>
 
         </div>
-          {{>skiller}}
+        <div class="col s6 columnright ">
+            <h4>Skills</h4>
+            {{> skills_selector}}
+            {{> logout}}
+        </div>
     </div>
     <a class="waves-effect waves-light btn" href="{{profileLink}}" target="_blank">Portfolio</a>
     <a class="waves-effect waves-light btn" href="mailto:{{student_email}}">Contact</a>
 
   </div>
-</template>
-
-<template name="skiller">
-    <div class="col s6 columnright ">
-        <h4>Skills</h4>
-        <ul>
-
-        </ul>
-        <!-- <form class="" action="index.html" method="post"></form> -->
-        <ul>
-            {{#each skills}}
-            <li>{{skill_name}}</li>
-            {{/each}}
-        </ul>
-        <!-- <h4>Blurb</h4> -->
-                <!-- <form id="saveBlurb" class="" action="index.html" method="post">
-                    <!Here is goes the bio thing
-                    <textarea placeholder="bio" name="name" rows="8" cols="80">{{blurb}}</textarea>
-                </form> -->
-        <!-- {{> skills_selector}} -->
-        <!-- <form class="" action="index.html" method="post">
-            <! image upload
-        </form> -->
-        <h4>Time Available per Week</h4>
-        <form id="saveHour" class="" action="index.html" method="post">
-            <textarea placeholder="Number of Hours" name="number" rows="1" cols="10">{{blurb}}</textarea>
-        </form>
-        <form class="" action="index.html" method="post">
-            <input type="submit" class="btn" name="" value="Save changes">
-                    {{> logout}}
-        </form>
-        <!-- <img src="/MarkPattern.png" /> -->
-
-    </div>
-
 </template>

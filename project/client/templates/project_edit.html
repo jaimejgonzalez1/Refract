@@ -17,7 +17,7 @@
         <div class="col offset-s8">
             <form class="" id="launch_project" action="index.html" method="post">
                 <input type="submit" class="btn" name="launch_project" value="Launch project">
-                <p>{{status}}</p>
+                <!-- <p>{{status}}</p> -->
             </form>
         </div>
     </div>
@@ -38,7 +38,7 @@
                         <ul>
                             {{#each child_skills}}
                             <li>
-                                <input class="proj-skill-input" id="{{_id}}" type="checkbox" name="" value="" checked="{{checked}}"><label for="{{_id}}">{{skill_name}}</label>
+                                <input class="proj-skill-input" id="B_{{_id}}" type="checkbox" name="" value="" checked="{{checked}}"><label for="B_{{_id}}">{{skill_name}}</label>
                             </li>
                             {{/each}}
                         </ul>

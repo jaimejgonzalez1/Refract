@@ -45,7 +45,7 @@ Template.project_skills.helpers({
     },
     'child_skills': function() {
         // console.log(this);
-        return Skills.find({parent_id: this.id});
+        return Skills.find({parent_id: this._id});
     },
 });
 

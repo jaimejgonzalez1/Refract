@@ -3,42 +3,46 @@
 </template>
 
 <template name="list_projects">
-  <div class="container">
-    <h2>{{header}}</h2>
-    <div class="row" style="margin-top:40px;">
-      <div class="col s12">
-        <ul>
-            {{#each list_projects}}
-            <li data-action="link" data-template="project_full" class="col l4 m6 s12">
-              <div class="card grey lighten-4 z-depth-0 one-card">
-                <div class="colored">
-                  <p>{{ownerName}}
-                  <!-- <i class="material-icons bookmark">turned_in</i> -->
-                  <i class="material-icons bookmark">turned_in_not</i></p>
-                </div>
-                <div class="card-content inside">
-                    <a href="#"><span class='card-title activator grey-text text-darken-4 title'>{{project_name}}{{#if isProjectOwner}}***{{/if}}</span></a>
-                    <p>Hours</p>
-                </div>
-                <div class="skills">
-                   <ul>
-                     <li><span>Skill Label</span>
-                     </li>
-                     <li>
-                       Skill Label
-                     </li>
-                   </ul>
-                </div>
-              </div>
-            </li>
-            <!-- <li>
+    <div class="container">
+        <h2>{{header}}</h2>
+        <div class="row" style="margin-top:40px;">
+            <div class="col s12">
+                <ul>
+                    {{#each list_projects}}
+                    <li data-action="link" data-template="project_full" class="col l4 m6 s12">
+                        <div class="card grey lighten-4 z-depth-0 one-card">
+                            <div class="colored">
+                                <p>{{ownerName}}
+                                    <!-- <i class="material-icons bookmark">turned_in</i> -->
+                                    <i class="material-icons bookmark">turned_in_not</i></p>
+                                </div>
+                                <div class="card-content inside">
+                                    <a href="#"><span class='card-title activator grey-text text-darken-4 title'>{{project_name}}{{#if isProjectOwner}}*{{/if}}</span></a>
+                                    <p>Hours???</p>
+                                </div>
+                                <div class="skills">
+                                    <ul>
+                                        <!-- {{#each proj_skills}}
+                                        <li>{{#if has_skill}}<span>{{skill_name}}</span>{{else}}{{skill_name}}{{/if}}</li>
+                                        {{/each}} -->
+                                        {{#each skills_has}}
+                                        <li><span>{{skill_name}}</span></li>
+                                        {{/each}}
+                                        {{#each skills_no_has}}
+                                        <li>{{skill_name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- <li>
 
-            </li> -->
-            {{/each}}
-        </ul>
-      </div>
+                    </li> -->
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <template name="project_full">
@@ -51,4 +55,10 @@
         {{/if}}
         {{/with}}
     </section>
+</template>
+
+<template name="project_skill">
+    <li>
+        <span>Skill Label {{skill_name}}</span>
+    </li>
 </template>

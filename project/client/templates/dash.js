@@ -42,8 +42,9 @@ Template.dash_nav.helpers({
         // get projects owned
         return Projects.find({owner_id: Meteor.userId()});
     },
-    'student_name': function() {
-        return Meteor.user().username;
+    'user': function() {
+        var profile = Meteor.user().profile;
+        return `${profile.firstname} ${profile.lastname}`;
     }
 
 });

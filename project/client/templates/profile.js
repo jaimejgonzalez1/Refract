@@ -18,6 +18,7 @@ Template.profile.helpers({
         return 'http://' + Meteor.user().profile.profileLink;
     },
     'skills': function() {
+        console.log(this.skills);
         return Skills.find({'id': {'$in': this.skills}});
     },
     'student_email': function() {

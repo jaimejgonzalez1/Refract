@@ -60,8 +60,31 @@ Template.list_projects.helpers({
     },
     ownerName() {
         Meteor.subscribe('Meteorusers', [this.owner_id]);
-        return Meteor.users.findOne(this.owner_id).username;
-    }
+        var profile = Meteor.users.findOne(this.owner_id).profile;
+        return `${profile.firstname} ${profile.lastname}`;
+    },
+    // proj_skills() {
+    //     console.log(this.skills);
+    //     // console.log(Skills.findOne({_id: {$in: this.skills}}));
+    //     // console.log(Skills.findOne());
+    //     // console.log(Skills.findOne(this._id));
+    //     console.log(this.skills);
+    //     return Skills.find({_id: {$in: this.skills}});
+    // },
+    // has_skill() {
+    //     console.log(this);
+    //     console.log(Meteor.user().profile.skills_arr);
+    //     console.log(this._id);
+    //     return _.contains(Meteor.user().profile.skills_arr, this._id);
+    // },
+    skills_has() {
+        var skills = this.skills;
+        return Skills.find({_id: {$in:_.filter(skills, function(item){return _.contains(Meteor.user().profile.skills_arr, item)})}});
+    },
+    skills_no_has() {
+        var skills = this.skills;
+        return Skills.find({_id: {$in:_.filter(skills, function(item){return !(_.contains(Meteor.user().profile.skills_arr, item))})}});
+    },
 });
 
 Template.project_full.helpers({
