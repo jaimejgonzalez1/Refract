@@ -1,0 +1,45 @@
+server {
+    listen 80;
+    server_name localhost;
+
+
+    # Tell Nginx and Passenger where your app's 'public' directory is
+     root /var/www/documenter/bundle/public;
+
+    # Turn on Passenger
+    passenger_enabled on;
+    # Tell Passenger that your app is a Meteor app
+    passenger_app_type node;
+    passenger_startup_file main.js;
+
+    # Tell your app where MongoDB is
+    passenger_env_var MONGO_URL mongodb://localhost:27017/refractdb;
+    # Tell your app what its root URL is
+    passenger_env_var ROOT_URL http://localhost:80/refract/;
+}
+
+
+server {
+    listen 80;
+    server_name 199.168.235.157;
+
+    location /refract/ {
+        proxy_pass http://localhost:80/refract/;
+    }
+}
+
+server {
+    listen 80;
+    server_name 172.23.23.238;
+
+    location /refract/ {
+        proxy_pass http://localhost:80/refract/;
+    }
+}
+
+
+
+
+skills list to convergence
+civic media ma working group
+m.a. survey

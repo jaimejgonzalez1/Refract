@@ -1,23 +1,5 @@
 <template name="project_space">
-    <!-- {{projects_list}} -->
-    <!-- {{> list_projects}} -->
-
     {{> Template.dynamic template=template_loaded}}
-    <!--
-    if project selected
-    if project owner
-    {{> project_edit}}
-    else
-    {{> project_view}}
-    else
-    if profile created
-    if student
-    {{> project_search}}
-    else
-    {{> pretend project?}}
-    else
-    {{> profile_editor}} (student register)
-    -->
 </template>
 
 <template name="list_projects">
@@ -30,7 +12,7 @@
             <li data-action="link" data-template="project_full" class="col l4 m6 s12">
               <div class="card grey lighten-4 z-depth-0 one-card">
                 <div class="colored">
-                  <p>Organization name
+                  <p>{{ownerName}}
                   <!-- <i class="material-icons bookmark">turned_in</i> -->
                   <i class="material-icons bookmark">turned_in_not</i></p>
                 </div>

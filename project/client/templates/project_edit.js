@@ -14,7 +14,7 @@ Template.project_edit.helpers({
 Template.project_edit.events({
     'submit #launch_project'(evt, wut) {
         evt.preventDefault();
-        Projects.update({'_id':Session.get('open_project')},{$set:{'status':'Launched'}});
+        Projects.update({'_id':Session.get('open_project')},{$set:{'status':'launched'}});
         Projects.update({'_id':Session.get('open_project')},{$set:{'date_launched': new Date()}});
         // change status of project
         console.log('make this do something');

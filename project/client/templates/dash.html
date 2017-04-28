@@ -11,8 +11,8 @@
 
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="tiny material-icons">menu</i></a>
           <ul class='hide-on-med-and-down' style='margin-left:250px'>
-            <li><a href="#">Browse</a></li>
-            <li><a href="#">My Projects</a></li>
+            <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#">Browse</a></li>
+            <li><a data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
             <li class=''>
               <form class="" id="new_project" action="index.html" method="post">
                   <input type="submit" class="btn btn-new-project z-depth-0" name="new_project" value="New Project">
@@ -45,8 +45,8 @@
   <div class="nav-content">
     <ul class="tabs center-align" >
         <!-- {{#if has_projects}} -->
-        <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="" href="#all_projects">In Progress</a></li>
         <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="created" href="#created">Created</a></li>
+        <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="launched" href="#all_projects">In Progress</a></li>
         <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="applied" href="#applied">Applied</a></li>
         <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="saved" href="#saved">Saved</a></li>
         <!-- {{else}} -->
@@ -72,7 +72,7 @@
           {{#if isStudent}} -->
           <!-- {{> profile}} -->
           {{> project_space}}
-        
+
     </main>
 
 </template>

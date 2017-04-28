@@ -36,7 +36,7 @@ Template.dash_nav.helpers({
     },
     'projects_saved': function() {
         // get projects owned
-        return Projects.find({owner_id: Meteor.userId()});
+        return Projects.find({_id: {$in: Meteor.user().profile.saved}});
     },
     'projects_inprogress': function() {
         // get projects owned
