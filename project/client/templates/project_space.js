@@ -63,6 +63,9 @@ Template.list_projects.helpers({
         var profile = Meteor.users.findOne(this.owner_id).profile;
         return `${profile.firstname} ${profile.lastname}`;
     },
+    isSaved() {
+        return _.contains(Meteor.user().profile.saved, this._id);
+    },
     // proj_skills() {
     //     console.log(this.skills);
     //     // console.log(Skills.findOne({_id: {$in: this.skills}}));
@@ -106,5 +109,18 @@ Template.list_projects.events({
     // console.log(evt.currentTarget);
     Session.set('open_project', this._id);
     Session.set('template_loaded', evt.currentTarget.dataset.template);
+},
+'click .material-icons.bookmark'(evt, wut) {
+    evt.preventDefault();
+    if (!(_.has(Meteor.user().profile, 'saved'))) {
+        Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.saved":[]}})
     }
+    if (!(_.contains(Meteor.user().profile.saved, this._id))) {
+        console.log(Meteor.users.update({_id: Meteor.userId()}, {$push:{"profile.saved":this._id}}));
+        console.log('push');
+    } else {
+        console.log(Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.saved":this._id}}));
+        console.log('pull');
+    }
+}
 });

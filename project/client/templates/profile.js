@@ -54,4 +54,13 @@ Template.profile.events({
         console.log(text);
         Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.linkedInLink":text}});
     },
+    'submit .save-profile'(evt) {
+        evt.preventDefault();
+    },
+    'submit .view-profile'(evt) {
+        evt.preventDefault();
+        Session.set('selected_user', Meteor.user()._id);
+        Session.set('last_template', Session.get('template_loaded'));
+        Session.set('template_loaded', 'profile_view');
+    }
 });

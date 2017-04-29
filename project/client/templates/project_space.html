@@ -9,14 +9,14 @@
             <div class="col s12">
                 <ul>
                     {{#each list_projects}}
-                    <li data-action="link" data-template="project_full" class="col l4 m6 s12">
+                    <li class="col l4 m6 s12">
                         <div class="card grey lighten-4 z-depth-0 one-card">
                             <div class="colored">
                                 <p>{{ownerName}}
                                     <!-- <i class="material-icons bookmark">turned_in</i> -->
-                                    <i class="material-icons bookmark">turned_in_not</i></p>
+                                    <i class="material-icons bookmark">{{#if isSaved}}turned_in{{else}}turned_in_not{{/if}}</i></p>
                                 </div>
-                                <div class="card-content inside">
+                                <div data-action="link" data-template="project_full" class="card-content inside">
                                     <a href="#"><span class='card-title activator grey-text text-darken-4 title'>{{project_name}}{{#if isProjectOwner}}*{{/if}}</span></a>
                                     <p>Hours???</p>
                                 </div>
