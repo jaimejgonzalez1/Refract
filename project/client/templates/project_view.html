@@ -16,7 +16,7 @@
 
           </div>
           <div class="col s12 m4 l4">
-            <h4><a href="#" data-action="link" data-profile="{{owner._id}}" data-template="profile_view">{{owner.username}}</a></h4>
+            <h4><a href="#" data-action="link" data-profile="{{owner._id}}" data-template="profile_view">{{owner.profile.firstname}} {{owner.profile.lastname}}</a></h4>
             <h5>Skills for this project</h5>
             <ul>
                 {{#each skills}}
@@ -26,11 +26,11 @@
             <h5>Estimated time to complete</h5>
               <p>Here goes some time </p>
             <h5>Project Due Date</h5>
-            <p>{{date_expiry}}</p>
+            <p>{{date date_expiry}}</p>
             <!-- <h5>Date created</h5>
-            <p>{{date_added}}</p>
+            <p>{{date_added}}</p> -->
             <h5>Date launched</h5>
-            <p>{{date_launched}}</p> -->
+            <p>{{date date_launched}}</p>
 
           </div>
         </div>
