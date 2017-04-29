@@ -1,8 +1,9 @@
 
 <template name="project_edit">
+  <div class="container">
     {{#with open_project}}
     <div class="row">
-        <div class="col s8">
+        <div class="col s12 m8">
             <!-- <h3>PROJECT EDIT</h3> -->
             <h4>Project title</h4>
             <input type="text" id="project_name_edit" name="project_name_edit" value="{{project_name}}">
@@ -14,17 +15,18 @@
         {{> project_skills}}
     </div>
     <div class="row">
-        <div class="col offset-s8">
+        <div class="col offset-s8z s12">
             <form class="" id="launch_project" action="index.html" method="post">
                 <input type="submit" class="btn" name="launch_project" value="Launch project">
             </form>
         </div>
     </div>
     {{/with}}
+    </div>
 </template>
 
 <template name="project_skills">
-    <div class="col s4">
+    <div class="col s12 m4">
         <h4>Skills</h4>
         <form class="" action="index.html" method="post">
             <ul class="collapsible" data-collapsible="accordion">

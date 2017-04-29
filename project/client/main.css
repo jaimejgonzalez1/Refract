@@ -188,6 +188,15 @@ nav .nav-wrapper{
   .hide-search{
     display: none;
   }
+  .nav-wrapper{
+    height: 95px;
+  }
+  .nav-responsive{
+    padding-top: 35px;
+    /*display: block;
+    margin: auto;*/
+  }
+
   .nav-content{
     padding-left: 242px;
   }
@@ -349,20 +358,23 @@ font-size: 36px;
   background-color:lightgrey;
 }
 
-// JAIMES AWEFUL CSS
+.propic{
+   /*border-radius: 50%;*/
+   height: 200px;
+   display: block;
+   margin: auto;
+
+}
+/*// JAIMES AWEFUL CSS
 .banner{
   width:100%;
   height:200px;
   background-color: black;
 }
-.propic{
-   /*border-radius: 50%;*/
-   height: 200px;
 
-}
 .columnright{
   margin-top: 200px;
 }
 .sizer{
   padding-bottom: 10%;
-}
+}*/
