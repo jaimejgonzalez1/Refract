@@ -9,6 +9,9 @@ Meteor.subscribe('files.images.all');
 
 Template.dash_nav.rendered = function() {
     $('ul.tabs').tabs();
+    $(".button-collapse").sideNav({
+      menuWidth:150
+    });
   }
 
 Template.dash.helpers({
