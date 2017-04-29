@@ -5,6 +5,9 @@ import { Session } from 'meteor/session';
 import './profile.html';
 
 Template.profile.helpers({
+    'user': function() {
+        return Meteor.user().profile;
+    },
     'student_name': function() {
         return Meteor.user().username;
     },
@@ -15,7 +18,7 @@ Template.profile.helpers({
         return Meteor.user().profile.linkedInLink;
     },
     'profileLink': function() {
-        return 'http://' + Meteor.user().profile.profileLink;
+        return Meteor.user().profile.profileLink;
     },
     'skills': function() {
         console.log(this.skills);

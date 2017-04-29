@@ -38,7 +38,9 @@ Template.project_edit.events({
 Template.project_skills.helpers({
     'checked': function() {
         console.log(Session.get('open_project'));
-        return _.contains(Projects.find(Session.get('open_project')).skills, this.id);
+        if (_.contains(Projects.findOne(Session.get('open_project')).skills, this._id)) {
+            return 'checked';
+        }
     },
     'parent_skills': function() {
         return Skills.find({parent_id: undefined});
@@ -61,10 +63,22 @@ Template.project_skills.events({
     },
     'change .proj-skill-input'(evt, wut) {
         // evt.preventDefault();
-        console.log(this.id);
+        console.log(this._id);
         // console.log(Session.set('open_project',''));
         console.log(Session.get('open_project'));
         console.log(Projects.findOne({'_id':Session.get('open_project')}));
-        console.log(Projects.update({'_id':Session.get('open_project')},{$push:{'skills':this.id}}));
+        if (!(_.has(Projects.findOne({'_id':Session.get('open_project')}), 'skills'))) {
+            Projects.update({'_id':Session.get('open_project')},{$set:{'skills':[]}});
+            // Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.saved":[]}})
+        }
+        if (!(_.contains(Projects.findOne({'_id':Session.get('open_project')}).skills, this._id))) {
+            console.log(Projects.update({_id: Session.get('open_project')}, {$push:{"skills":this._id}}));
+            console.log('push');
+        } else {
+            console.log(Projects.update({_id: Session.get('open_project')}, {$pull:{"skills":this._id}}));
+            console.log('pull');
+        }
+        console.log(this);
+        // console.log(Projects.update({'_id':Session.get('open_project')},{$push:{'skills':this._id}}));
     },
 });

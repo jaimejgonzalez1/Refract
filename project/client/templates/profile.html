@@ -3,7 +3,8 @@
     <div class="row">
         <div class="col s6">
           {{> uploadedFiles}}
-            <h3>{{student_name}}</h3>
+          {{#with user}}
+            <h3>{{firstname}} {{lastname}}</h3>
 
                     <form id="saveBlurb" class="" action="index.html" method="post">
                         <textarea placeholder="bio" name="name" rows="8" cols="80">{{blurb}}</textarea>
@@ -27,7 +28,7 @@
             <figure>
                 <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
             </figure>
-
+            {{/with}}
         </div>
         <div class="col s6 columnright ">
             <h4>Skills</h4>
@@ -35,8 +36,8 @@
             {{> logout}}
         </div>
     </div>
-    <a class="waves-effect waves-light btn" href="{{profileLink}}" target="_blank">Portfolio</a>
-    <a class="waves-effect waves-light btn" href="mailto:{{student_email}}">Contact</a>
+    <!-- <a class="waves-effect waves-light btn" href="{{profileLink}}" target="_blank">Portfolio</a>
+    <a class="waves-effect waves-light btn" href="mailto:{{student_email}}">Contact</a> -->
 
   </div>
 </template>
