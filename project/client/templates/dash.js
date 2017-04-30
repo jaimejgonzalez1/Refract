@@ -53,27 +53,44 @@ Template.dash_nav.helpers({
 });
 
 Template.dash_nav.events({
-    'submit #new_project'(evt, wut) {
-        evt.preventDefault();
-        var projectID = Projects.insert({
-            project_name: "Default name",
-            project_desc: "Default description",
-            date_added: new Date(),
-            date_expiry: new Date(),
-            date_launched: new Date(),
-            owner_id: Meteor.userId(),
-            skills: [],
-            status: "Created",
-            applicants: [],
-        });
-        Session.set('open_project', projectID);
-        Session.set('template_loaded', 'project_edit');
+    // 'submit #new_project'(evt, wut) {
+    //     evt.preventDefault();
+    //     var projectID = Projects.insert({
+    //         project_name: "Default name",
+    //         project_desc: "Default description",
+    //         date_added: new Date(),
+    //         date_expiry: new Date(),
+    //         date_launched: new Date(),
+    //         owner_id: Meteor.userId(),
+    //         skills: [],
+    //         status: "Created",
+    //         applicants: [],
+    //     });
+    //     Session.set('open_project', projectID);
+    //     Session.set('template_loaded', 'project_edit');
+    // },
+    "click #new-project": function (evt,wut) {
+      evt.preventDefault();
+      var projectID = Projects.insert({
+          project_name: "Default name",
+          project_desc: "Default description",
+          date_added: new Date(),
+          date_expiry: new Date(),
+          date_launched: new Date(),
+          owner_id: Meteor.userId(),
+          skills: [],
+          status: "Created",
+          applicants: [],
+      });
+      Session.set('template_loaded', 'project_edit');
+      Session.set('open_project', projectID);
     },
-    "click [data-action='link']": function (evt) {
+    "click [data-action='link']": function(evt){
+      console.log(evt.target.dataset.searchType);
+      Session.set('search_type', evt.target.dataset.searchType);
+      Session.set('template_loaded', evt.target.dataset.template);
+    }
     // set current project
     // load template
-    console.log(evt.target.dataset.searchType);
-    Session.set('search_type', evt.target.dataset.searchType);
-    Session.set('template_loaded', evt.target.dataset.template);
-    }
+
 });

@@ -38,6 +38,10 @@ main{
    margin: auto;
    text-align: center;
  }
+ h3{
+   font-family: var(--fonts-mont);
+   font-weight: 400;
+ }
  h4{
    font-family: "Montserrat", sans-serif;
    font-weight: 300;
@@ -110,14 +114,11 @@ nav .nav-wrapper{
   font-size: 9pt;
 }
 .btn-new-project{
-  color: var(--color-pink);
+  color: var(--color-pink)!important;
   border: none;
   border-radius: 0px;
-  height: 60px;
-  width: 100%;
   background-color: transparent;
   padding: auto;
-  font-size: 9pt;
   text-transform: none;
 }
 
@@ -131,6 +132,18 @@ nav .nav-wrapper{
   color: white;
 }
 
+.btn-new-project{
+  color: var(--color-pink);
+  border: none;
+  border-radius: 0px;
+  background-color: transparent;
+  padding: auto;
+  text-transform: none;
+}
+.btn-new-project:hover{
+  color: white;
+  background-color: var(--color-pink);
+}
 
 
   .logout{
@@ -293,6 +306,7 @@ nav ul a:hover{
   background-color: var(--color-blue);
   color: white !important;
 }
+
 
 .tabs .tab a{
   font-size: 9pt;
