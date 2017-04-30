@@ -43,10 +43,10 @@ AccountsTemplates.addFields([
             }, {
                 text: "Student",
                 value: "bb",
-            }, {
-                text: "Faculty",
-                value: "cc",
-            },
+             }//, {
+            //     text: "Faculty",
+            //     value: "cc",
+            // },
         ],
     },
     pwd
