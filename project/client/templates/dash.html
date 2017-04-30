@@ -10,7 +10,7 @@
           <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 167.3" height='40' ><defs><style>.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}.cls-3{fill:url(#linear-gradient-3);}.cls-4{fill:#fff;}</style><linearGradient id="linear-gradient" x1="1.54" y1="83.65" x2="244.26" y2="83.65" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2460fb"/><stop offset="0.48" stop-color="#e32efb"/><stop offset="1" stop-color="#f1517d"/></linearGradient><linearGradient id="linear-gradient-2" x1="21.26" y1="62.66" x2="242.61" y2="62.66" xlink:href="#linear-gradient"/><linearGradient id="linear-gradient-3" x1="1.54" y1="104.64" x2="244.26" y2="104.64" xlink:href="#linear-gradient"/></defs><title>logo_nav</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><rect class="cls-1" x="83.33" y="41.98" width="83.33" height="83.33"/><polygon class="cls-2" points="250 83.33 166.67 125.32 166.67 41.98 250 0 250 83.33"/><polygon class="cls-3" points="83.33 125.32 0 167.3 0 83.97 83.33 41.98 83.33 125.32"/><path class="cls-4" d="M130.21,111.73l-6-13.7h-5.1v13.7H98.84v-55h27.78q11.43,0,17.72,5.2t6.28,14.74a23.06,23.06,0,0,1-2.13,10.16A17.83,17.83,0,0,1,142.31,94L153,111.73ZM119.06,82.91h7.56a4.39,4.39,0,0,0,3.54-1.51,6.25,6.25,0,0,0,1.28-4.16,5.77,5.77,0,0,0-1.28-3.92,4.45,4.45,0,0,0-3.54-1.46h-7.56Z"/></g></g>
           </svg>
         </div>
-        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="tiny material-icons">menu</i></a>
+        <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="tiny material-icons">menu</i></a> -->
           <ul class='nav-mobile hide-on-med-and-down' style='margin-left:250px'>
             <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#">Browse</a></li>
             <li><a data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
@@ -21,7 +21,7 @@
             </li>
           </ul>
 <!-- HAMBURGER NAV -->
-          <ul class='side-nav' id='mobile-demo'>
+          <!-- <ul class='hide-search nav-responsive'>
             <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#">Browse</a></li>
             <li><a data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
             <li class=''>
@@ -29,7 +29,7 @@
                   <input type="submit" class="btn btn-new-project z-depth-0" name="new_project" value="New Project">
               </form>
             </li>
-          </ul>
+          </ul> -->
           <ul class='hide-on-med-and-down right'>
             <li style="margin-right:40px;"><div class="input-field">
               <form class="" action="index.html" method="post">
@@ -53,8 +53,19 @@
             </form>
           </div> -->
     </div>
+    <div class="nav-content">
+      <ul class="hidden-nav">
+        <li class="hidden-nav-list"><a data-action="link" data-template="list_projects" data-search-type="launched" href="#">Browse</a></li>
+        <li class="hidden-nav-list"><a data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
+        <li class='hidden-nav-list'>
+          <form class="" id="new_project" action="index.html" method="post">
+              <input type="submit" class="btn btn-new-project z-depth-0" name="new_project" value="New Project">
+          </form>
+        </li>
+      </ul>
+    </div>
   <div class="nav-content">
-    <ul class="tabs center-align container-flex" >
+    <ul class="tabs" >
         <!-- {{#if has_projects}} -->
         <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="created" href="#created">Created</a></li>
         <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="launched" href="#all_projects">In Progress</a></li>
@@ -69,8 +80,6 @@
   </div>
  </nav>
 </div>
-
-
 </template>
 
 <template name="dash">
