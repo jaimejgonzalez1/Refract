@@ -23,6 +23,17 @@ Template.project_view.helpers({
         // console.log(this.owner_id);
         // console.log(Meteor.users.findOne(this.owner_id));
         return Meteor.users.findOne(this.owner_id);
+    },
+    'date': function(thing) {
+        console.log(thing);
+        var addZero = function(y) {
+            var x = y.toString();
+            console.log(((x.length < 2) ? '0'+x : x));
+            return ((x.length < 2) ? `0${x}` : x);
+        }
+        console.log(`${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`);
+        // return `${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`;
+        return thing.toDateString();
     }
 });
 

@@ -9,6 +9,16 @@ Template.project_edit.helpers({
         console.log(Projects.findOne(Session.get('open_project')));
         return Projects.findOne(Session.get('open_project'));
     },
+    'date': function(thing) {
+        console.log(thing);
+        var addZero = function(y) {
+            var x = y.toString();
+            console.log(((x.length < 2) ? '0'+x : x));
+            return ((x.length < 2) ? `0${x}` : x);
+        }
+        console.log(`${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`);
+        return `${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`;
+    }
 });
 
 Template.project_edit.events({
