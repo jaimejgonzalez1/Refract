@@ -61,20 +61,21 @@
         </li>
       </ul>
     </div>
-  <div class="nav-content">
-    <ul class="tabs" >
-        <!-- {{#if has_projects}} -->
-        <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="created" href="#created">Created</a></li>
-        <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="launched" href="#all_projects">In Progress</a></li>
-        <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="applied" href="#applied">Applied</a></li>
-        <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="saved" href="#saved">Saved</a></li>
-        <!-- {{else}} -->
-        <!-- <h4>You have not created any projects yet!!!!!</h4> -->
-        <!-- {{/if}} -->
+    <div class="{{#if applied_nav}}nav-shown{{else}}nav-hidden{{/if}}">
+        <div class="nav-content">
+          <ul class="tabs" >
+              <!-- {{#if has_projects}} -->
+              <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="created" href="#created">Created</a></li>
+              <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="applied" href="#applied">Applied</a></li>
+              <li class="tab"><a data-action="link" data-template="list_projects" data-search-type="saved" href="#saved">Saved</a></li>
+              <!-- {{else}} -->
+              <!-- <h4>You have not created any projects yet!!!!!</h4> -->
+              <!-- {{/if}} -->
 
-        <!-- {{#if isStudent}} -->
-    </ul>
-  </div>
+              <!-- {{#if isStudent}} -->
+          </ul>
+        </div>
+    </div>
  </nav>
 </div>
 </template>

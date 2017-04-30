@@ -24,6 +24,14 @@ Template.dash.helpers({
 });
 
 Template.dash_nav.helpers({
+    'applied_nav': function() {
+        var search = Session.get('search_type');
+        if (search == 'created' || search == 'saved' || search == 'applied') {
+            return true;
+        } else {
+            return false;
+        }
+    },
     'has_projects': function() {
         console.log(Projects.findOne({owner_id: Meteor.userId()}));
         if (Projects.findOne({owner_id: Meteor.userId()}) == undefined) return false;

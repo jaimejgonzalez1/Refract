@@ -411,3 +411,21 @@ font-size: 36px;
 .sizer{
   padding-bottom: 10%;
 }*/
+
+.nav-shown {
+    height: 3.2em;
+    overflow: hidden;
+    transition: height 0.2s linear;
+}
+.nav-hidden {
+    height: 0.2em;
+    overflow: hidden;
+    transition: height 0.2s linear;
+}
+.material-icons {
+    cursor: pointer;
+}
+.project-view .material-icons {
+    font-size: 48px;
+    color: var(--color-pink);
+}
