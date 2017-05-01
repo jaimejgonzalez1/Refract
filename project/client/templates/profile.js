@@ -36,9 +36,9 @@ Template.profile.rendered = function(){
 }
 
 Template.profile.events({
-    'focusout #saveBlurb'(evt, wut) {
+    'keyup #saveBlurb'(evt, wut) {
         evt.preventDefault();
-        var text = evt.target;
+        var text = evt.target.value;
         console.log(evt.currentTarget);
         // if (Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.blurb":text}})) {
         // };

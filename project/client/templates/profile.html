@@ -20,7 +20,7 @@
         </figure>
         <h4>Bio</h4>
         <form id="saveBlurb" class="" action="index.html" method="post">
-          <textarea placeholder="bio" name="name" rows="8" cols="80">{{blurb}}</textarea>
+          <textarea placeholder="bio" value="{{blurb}}" id="blurb" name="blurb" rows="8" cols="80">{{blurb}}</textarea>
         </form>
         <form class="" action="index.html" method="post">
           <div class="input-field">
@@ -31,7 +31,7 @@
           </div>
           <div class="input-field">
             <input id="linkedInLink" type="text" name="linkedInLink" value="{{linkedInLink}}">
-            <label for="linkedInLink">LinkedIn profile<em></em>
+            <label for="linkedInLink">LinkedIn profile<em>{{linkedInLink}}</em>
             </label>
           </div>
         </form>
