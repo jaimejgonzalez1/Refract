@@ -3,7 +3,7 @@
     {{#with selected_user}}
     <!-- <section> -->
         <h4>profile</h4>
-        <h3>{{student_name}}</h3>
+        <h3>{{firstname}} {{lastname}}</h3>
         <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
         <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
         <figure>
@@ -14,7 +14,7 @@
         <h4>Skills</h4>
         <ul>
             {{#each skills}}
-            <li>{{skill}}</li>
+            <li>{{skill_name}}</li>
             {{/each}}
         </ul>
         <!-- {{skills}} -->

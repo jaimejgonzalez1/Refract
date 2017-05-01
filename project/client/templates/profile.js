@@ -36,11 +36,13 @@ Template.profile.rendered = function(){
 }
 
 Template.profile.events({
-    'submit #saveBlurb'(evt, wut) {
+    'focusout #saveBlurb'(evt, wut) {
         evt.preventDefault();
-        var text = evt.target[0].value;
-        if (Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.blurb":text}})) {
-        };
+        var text = evt.target;
+        console.log(evt.currentTarget);
+        // if (Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.blurb":text}})) {
+        // };
+        Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.blurb":text}});
     },
     'keyup #profileLink'(evt, wut) {
         evt.preventDefault();
