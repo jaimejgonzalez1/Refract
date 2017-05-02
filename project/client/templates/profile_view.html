@@ -1,55 +1,34 @@
 <template name="profile_view">
-    <!-- <h2>profile</h2> -->
-  <div class="container">
-    <div class="card white">
-      <div class="card-content">
+    <div class="container">
         <div class="row">
-          <div class="col s12">
-          {{#with selected_user}}
-          <!-- <section> -->
-              <!-- HERE GOES THE IMAGE -->
-                <h3 class="center-align">{{firstname}} {{lastname}}</h3>
-          {{/with}}
-          </div>
-        </div>
-          <div class="row">
-            <div class="col s12 m8">
-              {{#with selected_user}}
-                <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
-                <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
-                <h4>Blurb</h4>
-                <p>{{blurb}}</p>
-              {{/with}}
+            <div class="col s12">
             </div>
-          <div class="col s12 m4">
-          {{#with selected_user}}
-          <!-- <section> -->
-              <figure>
-                  <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
-              </figure>
-              <form class="" action="index.html" method="post">
-              </form>
-              <h4>Skills</h4>
-              <div class="card grey lighten-4">
-                <div class="card-content">
-                  <ul>
-                      {{#each skills}}
-                      <li>{{skill_name}}</li>
-                      {{/each}}
-                  </ul>
-                </div>
-              </div>
-
-              <!-- {{skills}} -->
-
-              <!-- {{> skills_selector}} -->
-          <!-- </section> -->
-          {{/with}}
-
         </div>
-      </div>
-      </div>
+        {{#with selected_user}}
+        <figure>
+            {{> uploadedFiles}}
+        </figure>
+        <h3>{{firstname}} {{lastname}}</h3>
+        <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
+        <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
+        <h4>Skills</h4>
+        <ul>
+            {{#each skills}}
+            <li><div class="chip">
+                {{skill_name}}
+            </div></li>
+            {{/each}}
+        </ul>
+        <h4>Blurb</h4>
+        <p>{{blurb}}</p>
+        {{#if isOwner}}
+        <form class="edit-profile">
+            <input class="btn" type="submit" name="edit-profile" value="Edit Profile">
+        </form>
+        {{> logout}}
+        {{/if}}
+        <!-- {{> skills_selector}} -->
+        <!-- </section> -->
+        {{/with}}
     </div>
-  </div>
-
 </template>

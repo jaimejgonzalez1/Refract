@@ -20,9 +20,12 @@ Template.profile.helpers({
     'profileLink': function() {
         return Meteor.user().profile.profileLink;
     },
+    // 'skills': function() {
+    //     console.log(this.skills);
+    //     return Skills.find({'id': {'$in': this.skills}});
+    // },
     'skills': function() {
-        console.log(this.skills);
-        return Skills.find({'id': {'$in': this.skills}});
+        return Skills.find({'_id': {'$in': Meteor.users.findOne({_id:Session.get('selected_user')}).profile.skills_arr}});
     },
     'student_email': function() {
         return Meteor.user().emails[0].address;
@@ -64,5 +67,8 @@ Template.profile.events({
         Session.set('selected_user', Meteor.user()._id);
         Session.set('last_template', Session.get('template_loaded'));
         Session.set('template_loaded', 'profile_view');
+    },
+    'click .close'(evt) {
+        Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.skills_arr":this._id}});
     }
 });

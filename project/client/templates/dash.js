@@ -56,8 +56,10 @@ Template.dash_nav.helpers({
     'user': function() {
         var profile = Meteor.user().profile;
         return `${profile.firstname} ${profile.lastname}`;
+    },
+    user_id: function() {
+        return Meteor.user()._id
     }
-
 });
 
 Template.dash_nav.events({
@@ -94,9 +96,10 @@ Template.dash_nav.events({
       Session.set('open_project', projectID);
     },
     "click [data-action='link']": function(evt){
-      console.log(evt.target.dataset.searchType);
-      Session.set('search_type', evt.target.dataset.searchType);
-      Session.set('template_loaded', evt.target.dataset.template);
+      console.log(evt.currentTarget.dataset.searchType);
+      Session.set('search_type', evt.currentTarget.dataset.searchType);
+      Session.set('template_loaded', evt.currentTarget.dataset.template);
+      Session.set('selected_user', evt.currentTarget.dataset.profile);
     }
     // set current project
     // load template
