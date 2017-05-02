@@ -54,6 +54,9 @@ Template.list_projects.helpers({
               // return projects from ids stored in saved array
               return 'SAVED PROJECTS';
           }
+          if (search_type=='launched') {
+              return 'EXPLORE';
+          }
       },
     isProjectOwner() {
         return (Meteor.userId() == this.owner_id);
