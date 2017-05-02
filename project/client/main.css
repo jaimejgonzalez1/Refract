@@ -252,6 +252,11 @@ nav .nav-wrapper{
   .btn-new-project{
       margin-right: 1em;
   }
+  .nav-shown {
+      height: 3.5em;
+      /*overflow: hidden;
+      transition: height 0.2s linear;*/
+  }
 }
 
 
@@ -345,8 +350,12 @@ nav ul a:hover{
 }
 
 /*PROJECT CARDS*/
-.card{
-  height: 15rem;
+.card-project{
+  height: 9rem;
+  /*width: 200px;*/
+  white-space: nowrap;
+  /*overflow: hidden;*/
+  text-overflow: ellipsis;
 }
 
 .colored{
@@ -363,13 +372,11 @@ nav ul a:hover{
   color:#fff;
 }
 
-
-
 .title{
   width:90%;
   font-family: "Montserrat";
   overflow: hidden;
-  text-overflow: ellipsis;
+  /*text-overflow: hidden;*/
 
 }
 
