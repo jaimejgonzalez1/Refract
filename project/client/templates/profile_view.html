@@ -1,26 +1,41 @@
 <template name="profile_view">
     <!-- <h2>profile</h2> -->
-    {{#with selected_user}}
-    <!-- <section> -->
-        <h4>profile</h4>
-        <h3>{{student_name}}</h3>
-        <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
-        <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
-        <figure>
-            <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
-        </figure>
-        <form class="" action="index.html" method="post">
-        </form>
-        <h4>Skills</h4>
-        <ul>
-            {{#each skills}}
-            <li>{{skill}}</li>
-            {{/each}}
-        </ul>
-        <!-- {{skills}} -->
-        <h4>Blurb</h4>
-        <p>{{blurb}}</p>
-        <!-- {{> skills_selector}} -->
-    <!-- </section> -->
-    {{/with}}
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+        {{#with selected_user}}
+        <!-- <section> -->
+            <!-- HERE GOES THE IMAGE -->
+            <h3 class="center-align">{{student_name}}</h3>
+        {{/with}}
+        </div>
+      </div>
+        <div class="row">
+          <div class="col s12 m8">
+            {{#with selected_user}}
+              <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
+              <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
+            {{/with}}
+          </div>
+        </div>
+        {{#with selected_user}}
+
+            <figure>
+                <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
+            </figure>
+            <form class="" action="index.html" method="post">
+            </form>
+            <h4>Skills</h4>
+            <ul>
+                {{#each skills}}
+                <li>{{skill}}</li>
+                {{/each}}
+            </ul>
+            <!-- {{skills}} -->
+            <h4>Blurb</h4>
+            <p>{{blurb}}</p>
+            <!-- {{> skills_selector}} -->
+        <!-- </section> -->
+        {{/with}}
+    </div>
 </template>
