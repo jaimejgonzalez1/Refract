@@ -96,10 +96,10 @@ Template.dash_nav.events({
       Session.set('open_project', projectID);
     },
     "click [data-action='link']": function(evt){
-      console.log(evt.target.dataset.searchType);
-      Session.set('search_type', evt.target.dataset.searchType);
-      Session.set('template_loaded', evt.target.dataset.template);
-      Session.set('selected_user', evt.target.dataset.profile);
+      console.log(evt.currentTarget.dataset.searchType);
+      Session.set('search_type', evt.currentTarget.dataset.searchType);
+      Session.set('template_loaded', evt.currentTarget.dataset.template);
+      Session.set('selected_user', evt.currentTarget.dataset.profile);
     }
     // set current project
     // load template

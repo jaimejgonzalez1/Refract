@@ -8,14 +8,8 @@
         </div>
         <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="tiny material-icons">menu</i></a> -->
           <ul class='nav-mobile hide-on-med-and-down' style='margin-left:250px'>
-            <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#">Browse</a></li>
-            <li><a data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
-            <li><a class="btn-new-project" id='new-project' href="#">New Project</a></li>
-            <!-- <li class=''>
-              <form class="" id="new_project" action="index.html" method="post">
-                  <input type="submit" class="btn btn-new-project z-depth-0" name="new_project" value="New Project">
-              </form>
-            </li> -->
+            <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#">Explore</a></li>
+            <li><a class="btn-my-projects" data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
           </ul>
 <!-- HAMBURGER NAV -->
           <!-- <ul class='hide-search nav-responsive'>
@@ -27,18 +21,20 @@
               </form>
             </li>
           </ul> -->
-          <ul class='hide-on-med-and-down right'>
-            <li style="margin-right:40px;"><div class="input-field">
+          <ul class='hide-on-med-and-down right' style="margin-right:2.2em;">
+            <li style="margin-right:1em;"><div class="input-field">
               <form class="" action="index.html" method="post">
                <input id="search" type="search">
                <label class="label-icon" for="search" style="left=0px!important;"><i class="small material-icons">search</i></label>
-               <i class="small material-icons">close</i>
+               <!-- <i class="tiny material-icons">close</i> -->
               </form>
             </div></li>
+            <li><a class="btn-new-project" id='new-project' href="#">+</a></li>
             <li>
               <div class="">
-                <img src="dumpsterfire.gif" class="circle" alt="" style="height:35px;">
-                <a data-action="link" data-profile="{{user_id}}" data-template="profile_view" data-search-type="none" href="#" style='display:inline;'>{{user}}</a>
+                <!-- <img src="dumpsterfire.gif" class="circle z-depth-2" alt="" style="height:35px;margin-top: 0.7em;"> -->
+                <!-- <a data-action="link" data-template="profile" data-search-type="saved" href="#" style='display:inline;'>{{user}}</a> -->
+                <a data-action="link" data-profile="{{user_id}}" data-template="profile_view" data-search-type="none" href="#" style='display:inline;'><img src="defaultpic.png" class="circle z-depth-2" alt="" style="height:35px;margin-top: 0.7em;"></a>
               </div>
             </li>
           </ul>
@@ -55,9 +51,10 @@
         <li class="hidden-nav-list"><a data-action="link" data-template="list_projects" data-search-type="launched" href="#">Browse</a></li>
         <li class="hidden-nav-list"><a data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
         <li class='hidden-nav-list'>
-          <form class="" id="new_project" action="index.html" method="post">
+          <a class="btn-new-project" id='new-project' href="#">+</a>
+          <!-- <form class="" id="new_project" action="index.html" method="post">
               <input type="submit" class="btn btn-new-project z-depth-0" name="new_project" value="New Project">
-          </form>
+          </form> -->
         </li>
       </ul>
     </div>
