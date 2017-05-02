@@ -114,12 +114,12 @@ nav .nav-wrapper{
   font-size: 9pt;
 }
 .btn-new-project{
+  font-size: 2em;
   color: var(--color-pink)!important;
-  border: none;
   border-radius: 0px;
   background-color: transparent;
-  padding: auto;
   text-transform: none;
+  margin-right: 0;
 }
 
 .btn:hover{
@@ -132,20 +132,18 @@ nav .nav-wrapper{
   color: white;
 }
 
-.btn-new-project{
-  color: var(--color-pink);
-  border: none;
-  border-radius: 0px;
-  background-color: transparent;
-  padding: auto;
-  text-transform: none;
-}
 .btn-new-project:hover{
   color: white;
   background-color: var(--color-pink);
 }
 
-
+.btn-my-projects:hover{
+  background-color: #f2f2f2;
+  color: black !important;
+}
+.btn-new-project:active{
+  background-color: #f2f2f2;
+}
   .logout{
     float: right;
     padding-right: 30px;
@@ -179,9 +177,17 @@ nav .nav-wrapper{
     box-shadow: 0 1px 0 0 var(--color-blue);
     }
     .input-field input[type=search]{
-    border-bottom: 1px solid gray;
+    /*border-bottom: 1px solid gray;*/
     background-color: transparent;
     display: inline-flex;
+    padding-left: 1.5rem;
+    width: 1em;
+    font-size: 1em;
+    transition: width 0.4s ease-in-out;
+    }
+    .input-field input[type=search]:focus{
+      border-bottom: 1px solid gray;
+      width: 18em;
     }
     .input-field input[type=search]:focus{
     border-bottom: 1px solid gray;
@@ -243,7 +249,11 @@ nav .nav-wrapper{
     margin-left: 30px;
     margin-top: 11px;
   }
+  .btn-new-project{
+      margin-right: 1em;
+  }
 }
+
 
 /*SIDE NAV CRAZYNESS--------------------------------------------*/
 
@@ -335,6 +345,9 @@ nav ul a:hover{
 }
 
 /*PROJECT CARDS*/
+.card{
+  height: 15rem;
+}
 
 .colored{
   /*background-color:rgba(233,30,99,1);*/
@@ -355,6 +368,9 @@ nav ul a:hover{
 .title{
   width:90%;
   font-family: "Montserrat";
+  overflow: hidden;
+  text-overflow: ellipsis;
+
 }
 
 .inside p{
@@ -420,7 +436,7 @@ font-size: 36px;
 }*/
 
 .nav-shown {
-    height: 3.2em;
+    height: 3.3em;
     overflow: hidden;
     transition: height 0.2s linear;
 }

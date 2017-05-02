@@ -1,66 +1,55 @@
 <template name="profile_view">
     <!-- <h2>profile</h2> -->
-
-    <div class="container">
-      <div class="row">
-        <div class="col s12">
-        {{#with selected_user}}
-        <!-- <section> -->
-            <!-- HERE GOES THE IMAGE -->
-            <h3 class="center-align">{{student_name}}</h3>
-        {{/with}}
-        </div>
-      </div>
+  <div class="container">
+    <div class="card white">
+      <div class="card-content">
         <div class="row">
-          <div class="col s12 m8">
-            {{#with selected_user}}
-              <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
-              <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
-            {{/with}}
+          <div class="col s12">
+          {{#with selected_user}}
+          <!-- <section> -->
+              <!-- HERE GOES THE IMAGE -->
+                <h3 class="center-align">{{firstname}} {{lastname}}</h3>
+          {{/with}}
           </div>
         </div>
-        {{#with selected_user}}
+          <div class="row">
+            <div class="col s12 m8">
+              {{#with selected_user}}
+                <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
+                <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
+                <h4>Blurb</h4>
+                <p>{{blurb}}</p>
+              {{/with}}
+            </div>
+          <div class="col s12 m4">
+          {{#with selected_user}}
+          <!-- <section> -->
+              <figure>
+                  <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
+              </figure>
+              <form class="" action="index.html" method="post">
+              </form>
+              <h4>Skills</h4>
+              <div class="card grey lighten-4">
+                <div class="card-content">
+                  <ul>
+                      {{#each skills}}
+                      <li>{{skill_name}}</li>
+                      {{/each}}
+                  </ul>
+                </div>
+              </div>
 
-            <figure>
-                <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
-            </figure>
-            <form class="" action="index.html" method="post">
-            </form>
-            <h4>Skills</h4>
-            <ul>
-                {{#each skills}}
-                <li>{{skill}}</li>
-                {{/each}}
-            </ul>
-            <!-- {{skills}} -->
-            <h4>Blurb</h4>
-            <p>{{blurb}}</p>
-            <!-- {{> skills_selector}} -->
-        <!-- </section> -->
-        {{/with}}
+              <!-- {{skills}} -->
+
+              <!-- {{> skills_selector}} -->
+          <!-- </section> -->
+          {{/with}}
+
+        </div>
+      </div>
+      </div>
     </div>
-    {{#with selected_user}}
-    <!-- <section> -->
-        <h4>profile</h4>
-        <h3>{{firstname}} {{lastname}}</h3>
-        <h4><a href="{{linkedInLink}}">LinkedIn</a></h4>
-        <h4><a href="{{profileLink}}">Personal Webpage</a></h4>
-        <figure>
-            <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
-        </figure>
-        <form class="" action="index.html" method="post">
-        </form>
-        <h4>Skills</h4>
-        <ul>
-            {{#each skills}}
-            <li>{{skill_name}}</li>
-            {{/each}}
-        </ul>
-        <!-- {{skills}} -->
-        <h4>Blurb</h4>
-        <p>{{blurb}}</p>
-        <!-- {{> skills_selector}} -->
-    <!-- </section> -->
-    {{/with}}
->>>>>>> 7ce9e00e9222ce48c01cb50e11de757dc6b7b5b6
+  </div>
+
 </template>
