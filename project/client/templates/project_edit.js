@@ -6,7 +6,7 @@ import './project_edit.html';
 
 Template.project_edit.helpers({
     'isLaunched': function() {
-        return (Projects.findOne(Session.get('open_project') == 'launched'));
+        return (Projects.findOne({_id:Session.get('open_project')}).status == 'launched');
     },
     'open_project': function() {
         console.log(Projects.findOne(Session.get('open_project')));
@@ -31,6 +31,12 @@ Template.project_edit.events({
         Projects.update({'_id':Session.get('open_project')},{$set:{'date_launched': new Date()}});
         // change status of project
         console.log('make this do something');
+    },
+    'submit #unlaunch_project'(evt, wut) {
+        evt.preventDefault();
+        Projects.update({'_id':Session.get('open_project')},{$set:{'status':'paused'}});
+        Projects.update({'_id':Session.get('open_project')},{$set:{'date_paused': new Date()}});
+        // change status of project
     },
     'keyup #project_name_edit'(evt, wut) {
         evt.preventDefault();
@@ -70,6 +76,13 @@ Template.project_skills.helpers({
 Template.project_skills.rendered = function(){
   $('.collapsible').collapsible();
   Materialize.updateTextFields();
+}
+
+Template.project_edit.rendered = function(){
+    $('.datepicker').pickadate({
+   selectMonths: true, // Creates a dropdown to control month
+   selectYears: 15 // Creates a dropdown of 15 years to control year
+ });
 }
 
 Template.project_skills.events({
