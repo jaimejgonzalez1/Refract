@@ -11,6 +11,7 @@ Template.project_space.helpers({
     search_type() {
         return Session.get('search_type');
     },
+
 });
 
 Template.list_projects.helpers({
@@ -66,6 +67,7 @@ Template.list_projects.helpers({
         var profile = Meteor.users.findOne(this.owner_id).profile;
         return `${profile.firstname} ${profile.lastname}`;
     },
+
     isSaved() {
         return _.contains(Meteor.user().profile.saved, this._id);
     },
