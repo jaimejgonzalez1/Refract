@@ -26,11 +26,7 @@ body{
 main{
   margin-top: 112px;
 }
-.behind{
-  z-index: 1000;
-  height: 100%;
 
-}
 
  h2{
    font-family: var(--fonts-mont);
@@ -114,6 +110,7 @@ nav .nav-wrapper{
   font-size: 9pt;
 }
 .btn-new-project{
+  color: white !important;
   font-size: 2em;
   color: var(--color-pink)!important;
   border-radius: 0px;
@@ -137,8 +134,13 @@ nav .nav-wrapper{
   background-color: var(--color-pink);
 }
 
+.btn-my-projects{
+  background-color: #f2f2f2 !important;
+  color: black !important;
+}
+
 .btn-my-projects:hover{
-  background-color: #f2f2f2;
+  background-color: #f2f2f2 !important;
   color: black !important;
 }
 .btn-new-project:active{
@@ -187,7 +189,7 @@ nav .nav-wrapper{
     }
     .input-field input[type=search]:focus{
       border-bottom: 1px solid gray;
-      width: 18em;
+      width: 15em;
     }
     .input-field input[type=search]:focus{
     border-bottom: 1px solid gray;
@@ -232,6 +234,9 @@ nav .nav-wrapper{
   margin: 0;
   flex-grow: 1;
 
+}
+.no-hover-link:hover{
+  background-color: transparent;
 }
 /*HIDDEN--------------------------------------------------------*/
 
@@ -323,10 +328,16 @@ nav .nav-wrapper{
 nav ul a{
   /*font-size: 9pt;*/
   /*font-weight: 300;*/
+
 }
 nav ul a:hover{
-  background-color: var(--color-blue);
-  color: white !important;
+  background-color: #f2f2f2f2 !important;
+  color: black !important;
+}
+
+.btn-explore{
+  background-color: #f2f2f2f2;
+  color: black !important;
 }
 
 
@@ -352,9 +363,7 @@ nav ul a:hover{
 /*PROJECT CARDS*/
 .card-project{
   height: 9rem;
-  /*width: 200px;*/
   white-space: nowrap;
-  /*overflow: hidden;*/
   text-overflow: ellipsis;
 }
 
@@ -373,10 +382,10 @@ nav ul a:hover{
 }
 
 .title{
-  width:90%;
+  width:100%;
   font-family: "Montserrat";
   overflow: hidden;
-  /*text-overflow: hidden;*/
+  text-overflow: ellipsis;
 
 }
 
@@ -388,12 +397,17 @@ nav ul a:hover{
 
 
 .skills ul{
+
 padding-left:0.5em;
+height:3em;
+overflow: hidden;
+/*white-space: nowrap;*/
+text-overflow: ellipsis;
+width: 100%;
 }
+
 .skills{
   border-top:1px solid rgba(233,30,99,1);
-
-  heignt:2em;
   width:100%;
   font-family: "Roboto";
 }
@@ -403,11 +417,14 @@ padding-left:0.5em;
   font-size:90%;
   display:inline;
   padding: 0.5em;
-  color:lightgrey;
+  color:grey;
+  /*white-space: nowrap;*/
 }
 
 .skills ul li span{
   color:rgba(233,30,99,1);
+  /*white-space: nowrap;*/
+
 }
 
 .bookmark{
