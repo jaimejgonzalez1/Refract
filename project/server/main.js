@@ -5,6 +5,7 @@ import { FilesCollection } from 'meteor/ostrio:files';
 import './publications/projectsPublish.js';
 
 Projects = new Mongo.Collection('projects');
+Applicants = new Mongo.Collection('applicants');
 
 Meteor.startup(() => {
     // code to run on server at startup
