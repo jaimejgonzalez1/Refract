@@ -76,12 +76,34 @@ Template.uploadedFiles.helpers({
     console.log(this);
 },
     imageFile: function () {
-   return Images.findOne({_id:Meteor.user().profile.pic_id});
+   return Images.findOne({_id:Meteor.users.findOne(Session.get('selected_user')).profile.pic_id});
  },
  hasImage: function () {
 return !(Meteor.user().profile.pic_id == "" || Meteor.user().profile.pic_id == undefined);
 },
+});
 
+Template.profile_pic.helpers({
+    pic: function() {
+        // console.log(userID);
+        // console.log(_.has(Meteor.users.findOne(userID), 'profile.pic_id'));
+        // Meteor.subscribe('Meteorusers', [userID]);
+        // if (_.has(Meteor.users.findOne(userID), 'profile.pic_id')) {
+        //     var profile = Meteor.users.findOne(userID).profile;
+        //     console.log(Images.findOne({_id:profile.pic_id}).link());
+        //     return Images.findOne({_id:profile.pic_id}).link();
+        // } else {
+        //     return './defaultpic.png';
+        // }
+        // console.log(userID);
+        // console.log(Images.findOne({_id:profile.pic_id}));
+        console.log(this);
+        if (this.profile.pic_id == '') {
+            return 'defaultpic.png';
+        } else {
+        return Images.findOne(this.profile.pic_id).link();
+    }
+    }
 });
 
 Template.uploadForm.onCreated(function () {

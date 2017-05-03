@@ -51,7 +51,6 @@ Template.project_edit.events({
 
 Template.project_skills.helpers({
     'checked': function() {
-        console.log(Session.get('open_project'));
         if (_.contains(Projects.findOne(Session.get('open_project')).skills, this._id)) {
             return 'checked';
         }

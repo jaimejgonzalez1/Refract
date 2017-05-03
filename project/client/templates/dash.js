@@ -59,7 +59,10 @@ Template.dash_nav.helpers({
     },
     user_id: function() {
         return Meteor.user()._id
-    }
+    },
+    current_user() {
+        return Meteor.user();
+    },
 });
 
 Template.dash_nav.events({

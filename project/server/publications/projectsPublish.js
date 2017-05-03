@@ -1,23 +1,39 @@
 Meteor.publish('Meteorusers', function (arrayOfIds) {
-  // Validate the arguments to be what we expect
-  // new SimpleSchema({
-  //   userIds: { type: [String] }
-  // }).validate({ userIds });
-  // Select only the users that match the array of IDs passed in
-  const selector = {
-    _id: { $in: arrayOfIds }
-  };
-  // Only return one field, `initials`
-  // const options = {
-  //   fields: { initials: 1 }
-  // };
-  // return Meteor.users.find(selector);
-  return Meteor.users.find(selector);
+    // Validate the arguments to be what we expect
+    // new SimpleSchema({
+    //   userIds: { type: [String] }
+    // }).validate({ userIds });
+    // Select only the users that match the array of IDs passed in
+    const selector = {
+        _id: { $in: arrayOfIds }
+    };
+    // Only return one field, `initials`
+    // const options = {
+    //   fields: { initials: 1 }
+    // };
+    // return Meteor.users.find(selector);
+    return Meteor.users.find(selector);
 });
 
 // Meteor.publish('Meteor.users.all', function(userId) {
 //     return Meteor.users.find({});
 // });
+
+
+// Meteor.publish('Applicants', function (projectID, userID) {
+//     var applicants = Applicants.find({
+//         $or : [
+//             {$and:[{project: projectID},
+//             {applicant: userID}]},
+//             {$and:[{project: projectID},
+//             {owner: userID}]}
+//         ]
+//     });
+//     return applicants;
+// });
+Meteor.publish('Applicants', function () {
+    return Applicants.find();
+});
 
 Meteor.publish('projects', function() {
     return Projects.find();
@@ -140,6 +156,6 @@ Meteor.publish('projects', function() {
 // //         return Skills.find();
 // //     }
 // // });
-  // Meteor.publish('files.images.all', function () {
-  //   return Images.find().cursor;
-  // });
+// Meteor.publish('files.images.all', function () {
+//   return Images.find().cursor;
+// });

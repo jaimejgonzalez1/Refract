@@ -66,16 +66,20 @@ Template.project_view.events({
     'submit #apply_project'(evt, wut) {
         evt.preventDefault();
         console.log('applied');
-        if (!(_.has(Meteor.user().profile, 'applied'))) {
-            Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.applied":[]}})
-        }
-        if (!(_.contains(Meteor.user().profile.applied, this._id))) {
-            console.log(Meteor.users.update({_id: Meteor.userId()}, {$push:{"profile.applied":this._id}}));
-            console.log('push');
-        } else {
-            console.log(Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.applied":this._id}}));
-            console.log('pull');
-        }
+        // if (!(_.has(Meteor.user().profile, 'applied'))) {
+        //     Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.applied":[]}})
+        // }
+        // if (!(_.contains(Meteor.user().profile.applied, this._id))) {
+        //     console.log(Meteor.users.update({_id: Meteor.userId()}, {$push:{"profile.applied":this._id}}));
+        //     console.log('push');
+        // } else {
+        //     console.log(Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.applied":this._id}}));
+        //     console.log('pull');
+        // }
+        // console.log('1', Meteor.user()._id, '2', this.owner_id, '3', this._id);
+        console.log(Applicants.insert({applicant:Meteor.user()._id,
+                            owner:this.owner_id,
+                            project:this._id}));
     },
     // Projects.update({'_id':Session.get('open_project')},{$set:{'status':'Launched'}});
     // Projects.update({'_id':Session.get('open_project')},{$set:{'date_launched': new Date()}});
