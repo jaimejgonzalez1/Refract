@@ -5,10 +5,8 @@ import './logout.html';
 
 Template.body.events({
     'submit .logout'(evt) {
-        Session.keys = {};
         evt.preventDefault();
-        //add callback later
-        console.log(evt);
+        Session.keys = {};
         Meteor.logout();
     }
 });

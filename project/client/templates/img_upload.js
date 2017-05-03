@@ -98,10 +98,10 @@ Template.profile_pic.helpers({
         // console.log(userID);
         // console.log(Images.findOne({_id:profile.pic_id}));
         console.log(this);
-        if (this.profile.pic_id == '') {
-            return 'defaultpic.png';
+        if (!(this.profile.pic_id)) {
+            return './defaultpic.png';
         } else {
-        return Images.findOne(this.profile.pic_id).link();
+        return Images.findOne({_id:this.profile.pic_id}).link();
     }
     }
 });
