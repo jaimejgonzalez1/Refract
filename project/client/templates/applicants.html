@@ -1,14 +1,17 @@
 <template name="applicants">
     <section>
         <form class="skills-selector" action="index.html" method="post">
-            <p>applicants!!</p>
+            <h4>Applicants</h4>
             <ul>
                 {{#each applicants}}
                 <li>
                     <div class="chip">
-                        <img src="images/yuna.jpg" alt="Contact Person">
-                        {{applicant}}
-                        <i class="close material-icons">close</i>
+                        <!-- <img src="images/yuna.jpg" alt="Contact Person"> -->
+                        {{#with applicant}}
+                        {{> profile_pic}}
+                        {{profile.firstname}} {{profile.lastname}}
+                        {{/with}}
+                        <!-- <i class="close material-icons">close</i> -->
                     </div>
                 </li>
                 {{/each}}

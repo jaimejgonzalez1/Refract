@@ -17,8 +17,10 @@ Template.applicants.helpers({
     'applicant': function() {
         console.log(this.applicant);
         Meteor.subscribe('Meteorusers', [this.applicant]);
-        var profile = Meteor.users.findOne(this.applicant).profile;
-        return `${profile.firstname} ${profile.lastname}`;    },
+        var profile = Meteor.users.findOne(this.applicant);
+        // return `${profile.firstname} ${profile.lastname}`;
+        return profile;
+    },
 });
 
 Template.applicants.rendered = function(){

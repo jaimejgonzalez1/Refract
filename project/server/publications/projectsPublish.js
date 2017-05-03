@@ -19,9 +19,6 @@ Meteor.publish('Meteorusers', function (arrayOfIds) {
 //     return Meteor.users.find({});
 // });
 
-Meteor.publish('projects', function() {
-    return Projects.find();
-});
 
 // Meteor.publish('Applicants', function (projectID, userID) {
 //     var applicants = Applicants.find({

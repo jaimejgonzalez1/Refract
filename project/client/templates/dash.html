@@ -37,7 +37,14 @@
               <div class="">
                 <!-- <img src="dumpsterfire.gif" class="circle z-depth-2" alt="" style="height:35px;margin-top: 0.7em;"> -->
                 <!-- <a data-action="link" data-template="profile" data-search-type="saved" href="#" style='display:inline;'>{{user}}</a> -->
-                <a data-action="link" data-profile="{{user_id}}" data-template="profile_view" data-search-type="none" href="#" style='display:inline;'><img src="defaultpic.png" class="circle z-depth-2" alt="" style="height:35px;margin-top: 0.7em;"></a>
+                <a data-action="link" data-profile="{{user_id}}" data-template="profile_view" data-search-type="none" href="#" style='display:inline;'>
+                    <!-- <img src="defaultpic.png" class="circle z-depth-2" alt="" style="height:35px;margin-top: 0.7em;"> -->
+                    {{#with current_user}}
+                    <div class="circle z-depth-2" style="height:35px;margin-top: -3.3em;overflow: hidden;">
+                        {{> profile_pic}}
+                    </div>
+                    {{/with}}
+                </a>
               </div>
             </li>
           </ul>
