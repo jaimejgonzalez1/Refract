@@ -38,6 +38,10 @@ Template.project_edit.events({
         evt.preventDefault();
         console.log(Projects.update({'_id':this._id},{$set:{'project_desc':evt.target.value}}));
     },
+    'keyup #hours'(evt,wut){
+      evt.preventDefault();
+      console.log(Projects.update({'_id':this._id},{$set:{'est_hours':evt.target.value}}));
+    },
     'change #expiry_date_edit'(evt, wut) {
         evt.preventDefault();
         console.log(evt);
