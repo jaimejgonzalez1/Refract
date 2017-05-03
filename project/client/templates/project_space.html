@@ -12,30 +12,32 @@
                     <li class="col l4 m6 s12">
                         <div class="card grey lighten-4 z-depth-0 one-card">
                             <div class="colored">
-                                <p>{{ownerName}}<i class="material-icons bookmark">{{#if isSaved}}turned_in{{else}}turned_in_not{{/if}}</i></p>
+
+                                <p>{{ownerName}}
                                     <!-- <i class="material-icons bookmark">turned_in</i> -->
+                                    <i class="material-icons bookmark">{{#if isSaved}}turned_in{{else}}turned_in_not{{/if}}</i></p>
+                                </div>
+
+                                <div data-action="link" data-template="project_full" class="card-content card-project inside">
+                                    <a href="#"><span class='card-title activator grey-text text-darken-4 title'>{{project_name}}{{#if isProjectOwner}} {{/if}}</span></a>
+                                    <p>{{est_hours}} Est. Hours </p>
+                                </div>
+                                <div class="skills grey lighten-2">
+                                    <ul>
+                                        <!-- {{#each proj_skills}}
+                                        <li>{{#if has_skill}}<span>{{skill_name}}</span>{{else}}{{skill_name}}{{/if}}</li>
+                                        {{/each}} -->
+                                        {{#each skills_has}}
+                                        <li><span>{{skill_name}}</span></li>
+                                        {{/each}}
+                                        {{#each skills_no_has}}
+                                        <li>{{skill_name}}</li>
+                                        {{/each}}
+                                    </ul>
+                                </div>
                             </div>
-                            <div data-action="link" data-template="project_full" class="card-content card-project inside">
-                                <a href="#"><span class='card-title activator grey-text text-darken-4 title'>{{project_name}}{{#if isProjectOwner}} {{/if}}</span></a>
-                                <p class="">Hours</p>
-                            </div>
-                            <div class="skills grey lighten-2">
-                                <ul>
-                                    <!-- {{#each proj_skills}}
-                                    <li>{{#if has_skill}}<span>{{skill_name}}</span>{{else}}{{skill_name}}{{/if}}</li>
-                                    {{/each}} -->
-                                    {{#each skills_has}}
-                                      <li><span>{{skill_name}}</span></li>
-                                    {{/each}}
-                                    {{#each skills_no_has}}
-                                      <li>{{skill_name}}</li>
-                                    {{/each}}
-                                </ul>
-                            </div>
-                        </div>
                         </li>
                         <!-- <li>
-
                     </li> -->
                     {{/each}}
                 </ul>
