@@ -27,7 +27,6 @@ Meteor.methods({
 
     },
 });
-
 // import './main.html';
 
 // create the collections on the client

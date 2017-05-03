@@ -5,6 +5,9 @@ import { Session } from 'meteor/session';
 import './project_edit.html';
 
 Template.project_edit.helpers({
+    'isLaunched': function() {
+        return (Projects.findOne(Session.get('open_project') == 'launched'));
+    },
     'open_project': function() {
         console.log(Projects.findOne(Session.get('open_project')));
         return Projects.findOne(Session.get('open_project'));

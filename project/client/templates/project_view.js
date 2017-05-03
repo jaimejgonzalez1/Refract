@@ -39,50 +39,47 @@ Template.project_view.helpers({
 
 Template.project_view.events({
     "click [data-action='link']": function (evt) {
-    // set current project
-    // load template
-    console.log(this._id);
-    console.log(evt.currentTarget);
-    console.log(evt.currentTarget.dataset.template);
-    Session.set('selected_user', evt.currentTarget.dataset.profile);
-    Session.set('last_template', Session.get('template_loaded'));
-    Session.set('template_loaded', evt.currentTarget.dataset.template);
-},
-'submit #save_project'(evt, wut) {
-    evt.preventDefault();
-    console.log(this._id);
-    // console.log(_.contains(Meteor.user().profile.saved, this._id));
-    if (!(_.has(Meteor.user().profile, 'saved'))) {
-        Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.saved":[]}})
-    }
-    if (!(_.contains(Meteor.user().profile.saved, this._id))) {
-        console.log(Meteor.users.update({_id: Meteor.userId()}, {$push:{"profile.saved":this._id}}));
-        console.log('push');
-    } else {
-        console.log(Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.saved":this._id}}));
-        console.log('pull');
-    }
+        // set current project
+        // load template
+        console.log(this._id);
+        console.log(evt.currentTarget);
+        console.log(evt.currentTarget.dataset.template);
+        Session.set('selected_user', evt.currentTarget.dataset.profile);
+        Session.set('last_template', Session.get('template_loaded'));
+        Session.set('template_loaded', evt.currentTarget.dataset.template);
+    },
+    'submit #save_project'(evt, wut) {
+        evt.preventDefault();
+        console.log(this._id);
+        if (!(_.has(Meteor.user().profile, 'saved'))) {
+            Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.saved":[]}})
+        }
+        if (!(_.contains(Meteor.user().profile.saved, this._id))) {
+            console.log(Meteor.users.update({_id: Meteor.userId()}, {$push:{"profile.saved":this._id}}));
+            console.log('push');
+        } else {
+            console.log(Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.saved":this._id}}));
+            console.log('pull');
+        }
     },
     'submit #apply_project'(evt, wut) {
         evt.preventDefault();
         console.log('applied');
-        // if (!(_.has(Meteor.user().profile, 'applied'))) {
-        //     Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.applied":[]}})
-        // }
-        // if (!(_.contains(Meteor.user().profile.applied, this._id))) {
-        //     console.log(Meteor.users.update({_id: Meteor.userId()}, {$push:{"profile.applied":this._id}}));
-        //     console.log('push');
-        // } else {
-        //     console.log(Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.applied":this._id}}));
-        //     console.log('pull');
-        // }
-        // console.log('1', Meteor.user()._id, '2', this.owner_id, '3', this._id);
         console.log(Applicants.insert({applicant:Meteor.user()._id,
-                            owner:this.owner_id,
-                            project:this._id}));
-    },
-    // Projects.update({'_id':Session.get('open_project')},{$set:{'status':'Launched'}});
-    // Projects.update({'_id':Session.get('open_project')},{$set:{'date_launched': new Date()}});
-    // change status of project
-
-});
+            owner:this.owner_id,
+            project:this._id}));
+        },
+        'click .material-icons.projectbookmark'(evt, wut) {
+            evt.preventDefault();
+            if (!(_.has(Meteor.user().profile, 'saved'))) {
+                Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.saved":[]}})
+            }
+            if (!(_.contains(Meteor.user().profile.saved, this._id))) {
+                console.log(Meteor.users.update({_id: Meteor.userId()}, {$push:{"profile.saved":this._id}}));
+                console.log('push');
+            } else {
+                console.log(Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.saved":this._id}}));
+                console.log('pull');
+            }
+        }
+    });
