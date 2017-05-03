@@ -131,7 +131,7 @@ nav .nav-wrapper{
 
 .btn-new-project:hover{
   color: white!important;
-  background-color: var(--color-pink);
+  background-color: var(--color-pink)!important;
 }
 
 .btn-my-projects{
@@ -451,12 +451,34 @@ font-size: 36px;
 }
 
 .tile-container{
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  flex-wrap: wrap;
   display: flex;
+
 }
 
-li .tile:nth-child(3n+0){
+.tile{
+  margin: 1em;
   flex-grow: 1;
+  /*display: inline-block;*/
+}
+@media only screen and (max-width:992px){
+  .tile{
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    flex-grow: 1;
+  }
 }
 @media only screen and (min-width:992px){
+  .tile:nth-child(3n) {
+      max-width: 15em;
+  }
 
+  .tile:nth-child(2n) {
+      max-width: 25em;
+  }
 }
