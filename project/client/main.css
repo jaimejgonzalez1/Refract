@@ -450,8 +450,13 @@ font-size: 36px;
     color: var(--color-pink);
 }
 
+.tile-container{
+  display: flex;
+}
+
+li .tile:nth-child(3n+0){
+  flex-grow: 1;
+}
 @media only screen and (min-width:992px){
-  .project-layout:nth-child(3n+0){
-    width: 50em;
-  }
+
 }
