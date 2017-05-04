@@ -12,7 +12,7 @@ Template.dash_nav.rendered = function() {
     $(".button-collapse").sideNav({
       menuWidth:150
     });
-  }
+}
 
 Template.dash.helpers({
     isOrg() {

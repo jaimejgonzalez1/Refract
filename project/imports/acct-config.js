@@ -43,15 +43,21 @@ AccountsTemplates.addFields([
             }, {
                 text: "Student",
                 value: "bb",
-             }//, {
-            //     text: "Faculty",
-            //     value: "cc",
-            // },
-        ],
-    },
-    pwd
-]
+            }//, {
+                //     text: "Faculty",
+                //     value: "cc",
+                // },
+            ],
+        },
+        pwd
+    ]
 );
+
+AccountsTemplates.configure({
+    onSubmitHook: function(){
+        Session.set('template_loaded', 'profile_edit');
+    }
+});
 
 // Validate username, without a specific error message.
 // Accounts.validateNewUser((user) => {
