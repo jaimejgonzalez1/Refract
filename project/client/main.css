@@ -221,7 +221,7 @@ nav .nav-wrapper{
   width: 100%;
   background-color: #fff;
   margin: 0 auto;
-  white-space: nowrap;
+  flex-wrap: nowrap;
   display: flex;
 }
 .hidden-nav-list{
@@ -258,7 +258,7 @@ nav .nav-wrapper{
       margin-right: 1em;
   }
   .nav-shown {
-      height: 3.5em;
+      height: 3.7em;
       /*overflow: hidden;
       transition: height 0.2s linear;*/
   }
@@ -456,7 +456,7 @@ width: 100%;
 
 
 .nav-shown {
-    height: 3.3em;
+    height: 3.5em;
     overflow: hidden;
     transition: height 0.2s linear;
 }
