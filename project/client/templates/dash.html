@@ -11,7 +11,7 @@
             <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#" class="{{#if applied_nav}}{{else}}btn-my-projects{{/if}}">Explore</a></li>
             <li><a class=" {{#if applied_nav}}btn-my-projects{{else}}{{/if}}" data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
           </ul>
-<!-- HAMBURGER NAV -->
+
           <ul class='hide-on-med-and-down right' style="margin-right:2.2em;height:64px;">
             <li style="margin-right:1em;"><div class="input-field">
               <form class="" action="index.html" method="post">
@@ -29,9 +29,9 @@
                     <!-- <img src="defaultpic.png" class="circle z-depth-2" alt="" style="height:35px;margin-top: 0.7em;"> -->
                     {{#if current_user}}
                     {{#with current_user}}
-                    <div class="circle z-depth-2" style="height:35px;margin-top: -3.3em;overflow: hidden;">
+
                         {{> profile_pic}}
-                    </div>
+                    
                     {{/with}}
                     {{/if}}
                 </a>
