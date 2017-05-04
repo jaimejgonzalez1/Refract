@@ -36,24 +36,6 @@ Template.profile_view.rendered = function(){
 }
 
 Template.profile_view.events({
-    // 'submit #saveBlurb'(evt, wut) {
-    //     evt.preventDefault();
-    //     var text = evt.target[0].value;
-    //     if (Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.blurb":text}})) {
-    //     };
-    // },
-    // 'keyup #profileLink'(evt, wut) {
-    //     evt.preventDefault();
-    //     var text = evt.target.value;
-    //     console.log(text);
-    //     Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.profileLink":text}});
-    // },
-    // 'keyup #linkedInLink'(evt, wut) {
-    //     evt.preventDefault();
-    //     var text = evt.target.value;
-    //     console.log(text);
-    //     Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.linkedInLink":text}});
-    // },
     'submit .edit-profile'(evt) {
         evt.preventDefault();
         Session.set('selected_user', Meteor.user()._id);
