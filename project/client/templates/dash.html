@@ -8,8 +8,8 @@
         </div>
         <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="tiny material-icons">menu</i></a> -->
           <ul class='nav-mobile hide-on-med-and-down' style='margin-left:250px'>
-            <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#" class="{{#if applied_nav}}{{else}}btn-my-projects{{/if}}">Explore</a></li>
-            <li><a class=" {{#if applied_nav}}btn-my-projects{{else}}{{/if}}" data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
+            <li><a data-action="link" data-template="list_projects" data-search-type="launched" href="#" class="{{#if applied_nav}}something{{else}}btn-my-projects{{/if}}">Explore</a></li>
+            <li><a class=" {{#if applied_nav}}btn-my-projects{{else}}something{{/if}}" data-action="link" data-template="list_projects" data-search-type="created" href="#">My Projects</a></li>
           </ul>
 
           <ul class='hide-on-med-and-down right' style="margin-right:2.2em;height:64px;">
@@ -31,7 +31,7 @@
                     {{#with current_user}}
 
                         {{> profile_pic}}
-                    
+
                     {{/with}}
                     {{/if}}
                 </a>
@@ -52,9 +52,9 @@
         <li class="hidden-nav-list"><a data-action="link" data-template="list_projects" data-search-type="created" href="#" class="btn-my-projects">My Projects</a></li>
         <li class='hidden-nav-list'>
         <a class="btn-new-project" id='new-project' href="#">+</a>
-          <!-- <form class="" id="new_project" action="index.html" method="post">
+          <form class="" id="new_project" action="index.html" method="post">
               <input type="submit" class="btn btn-new-project z-depth-0" name="new_project" value="New Project">
-          </form> -->
+          </form>
         </li>
       </ul>
     </div>

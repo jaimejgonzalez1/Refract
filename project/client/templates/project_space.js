@@ -108,10 +108,12 @@ Template.project_full.helpers({
 
 Template.list_projects.events({
     "click [data-action='link']": function (evt) {
+        evt.preventDefault();
+
     // set current project
     // load template
-    // console.log(this._id);
-    // console.log(evt.currentTarget);
+    console.log(this._id);
+    console.log(evt.currentTarget);
     Session.set('open_project', this._id);
     Session.set('template_loaded', evt.currentTarget.dataset.template);
 },

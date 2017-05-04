@@ -46,5 +46,11 @@ Template.applicants.events({
                 // pluck from array
                 Meteor.users.update({_id: Meteor.userId()}, {$pull:{"profile.skills_arr":this._id}});
             }
+        },
+        'click a'(evt) {
+            console.log(this._id);
+            Session.set('selected_user', this._id);
+            Session.set('last_template', Session.get('template_loaded'));
+            Session.set('template_loaded', 'profile_view');
         }
     });

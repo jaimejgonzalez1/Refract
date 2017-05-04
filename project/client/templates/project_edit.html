@@ -6,7 +6,8 @@
         <div class="col s12 m8">
             <!-- <h3>PROJECT EDIT</h3> -->
             {{#if isLaunched}}
-            <h4>{{Project Name}} <span>THIS PROJECT IS LIVE!</span></h4>
+            <h4>Project title <span style="color: red;">THIS PROJECT IS LIVE!</span></h4>
+            <p>{{project_name}}</p>
             {{else}}
             <h4>Project title</h4>
             <input type="text" id="project_name_edit" name="project_name_edit" value="{{project_name}}">
@@ -34,6 +35,10 @@
             <form class="" id="launch_project" action="index.html" method="post">
                 <input type="submit" class="btn" name="launch_project" value="Launch project">
             </form>
+            <form class="" id="delete_project" action="index.html" method="post">
+                <input type="submit" class="btn" name="delete_project" value="Delete this project">
+            </form>
+
             {{/if}}
         </div>
     </div>

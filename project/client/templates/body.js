@@ -21,8 +21,8 @@ Template.body.events({
 });
 
 Template.body.rendered = function() {
-    Session.set('template_loaded', 'list_projects');
-    Session.set('search_type', 'launched');
-    Session.set('selected_user', Meteor.user()._id);
-    Session.set('last_template', 'profile_view');
+    // Session.set('template_loaded', 'list_projects');
+    // Session.set('search_type', 'launched');
+    // Session.set('selected_user', Meteor.user()._id);
+    // Session.set('last_template', 'profile_view');
 };

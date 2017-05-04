@@ -18,6 +18,15 @@
     {{/if}}
 </template>
 
+<template name="profile_view_pic">
+    <div class="circle z-depth-2" style="height:200px;width:200px;background-image:url('{{pic}}');background-size: cover;margin-top: -3.3em;overflow: hidden;margin:auto"></div>
+    <!-- <img src="{{pic}}" alt=""> -->
+</template>
+
 <template name="profile_pic">
   <div class="circle z-depth-2" style="height:35px;width:35px;background-image:url('{{pic}}');background-size: cover;margin-top: -3.3em;overflow: hidden;"></div>
+</template>
+
+<template name="applicant_pic">
+    <img src="{{pic}}" alt="">
 </template>
