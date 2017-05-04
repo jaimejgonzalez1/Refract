@@ -1,44 +1,48 @@
 
 <template name="project_edit">
   <div class="container">
-    {{#with open_project}}
-    <div class="row">
-        <div class="col s12 m8">
-            <!-- <h3>PROJECT EDIT</h3> -->
-            {{#if isLaunched}}
-            <h4>{{Project Name}} <span>THIS PROJECT IS LIVE!</span></h4>
-            {{else}}
-            <h4>Project title</h4>
-            <input type="text" id="project_name_edit" name="project_name_edit" value="{{project_name}}">
-            {{/if}}
-            <h4>Description</h4>
-            <textarea id="project_desc_edit" name="name" rows="8" cols="80">{{project_desc}}</textarea>
-            <h4>Application Due Date</h4>
-            <input id="expiry_date_edit" type="date" class="datepicker" value="{{date date_expiry}}">
-            <h4>Estimated Hours</h4>
-            <input id="hours" type="number" value="{{est_hours}}" />
+    <div class="card">
+        <div class="card-content">
+          {{#with open_project}}
+          <div class="row">
+              <div class="col s12 m8">
+                  <!-- <h3>PROJECT EDIT</h3> -->
+                  {{#if isLaunched}}
+                  <h4>{{Project Name}} <span>THIS PROJECT IS LIVE!</span></h4>
+                  {{else}}
+                  <h4>Project title</h4>
+                  <input type="text" id="project_name_edit" name="project_name_edit" value="{{project_name}}">
+                  {{/if}}
+                  <h4>Description</h4>
+                  <textarea id="project_desc_edit" name="name" rows="8" cols="80">{{project_desc}}</textarea>
+                  <h4>Application Due Date</h4>
+                  <input id="expiry_date_edit" type="date" class="datepicker" value="{{date date_expiry}}">
+                  <h4>Estimated Hours</h4>
+                  <input id="hours" type="number" value="{{est_hours}}" />
+              </div>
+              {{#if isLaunched}}
+              {{> applicants}}
+              {{else}}
+              {{> project_skills}}
+              {{/if}}
+          </div>
+          <div class="row">
+              <div class="col offset-s8z s12">
+                  {{#if isLaunched}}
+                  <form class="" id="unlaunch_project" action="index.html" method="post">
+                      <input type="submit" class="btn" name="unlaunch_project" value="Stop project">
+                  </form>
+                  {{else}}
+                  <form class="" id="launch_project" action="index.html" method="post">
+                      <input type="submit" class="btn" name="launch_project" value="Launch project">
+                  </form>
+                  {{/if}}
+              </div>
+          </div>
+          {{/with}}
         </div>
-        {{#if isLaunched}}
-        {{> applicants}}
-        {{else}}
-        {{> project_skills}}
-        {{/if}}
     </div>
-    <div class="row">
-        <div class="col offset-s8z s12">
-            {{#if isLaunched}}
-            <form class="" id="unlaunch_project" action="index.html" method="post">
-                <input type="submit" class="btn" name="unlaunch_project" value="Stop project">
-            </form>
-            {{else}}
-            <form class="" id="launch_project" action="index.html" method="post">
-                <input type="submit" class="btn" name="launch_project" value="Launch project">
-            </form>
-            {{/if}}
-        </div>
-    </div>
-    {{/with}}
-    </div>
+  </div>
 </template>
 
 <template name="project_skills">

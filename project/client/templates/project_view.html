@@ -1,57 +1,61 @@
 <template name="project_view">
-    <div class="project-view">
-  <div class="row">
-    {{#with open_project}}
-      <div class="container">
+  <div class="container">
+    <div class="card white">
+      <div class="project-view">
         <div class="row">
-          <div class="col s12 m8 l8">
-            <h2 style="text-align:left;">{{project_name}}<i class="material-icons projectbookmark">{{#if saved}}turned_in{{else}}turned_in_not{{/if}}</i></h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12 m8 l8">
-              <!-- <h3>PROJECT VIEW</h3> -->
-              <p>{{project_desc}}</p>
-              <!-- <h4>Status</h4>
-              <p>{{status}}</p> -->
+          {{#with open_project}}
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m8 l8">
+                <h2 style="text-align:left;">{{project_name}}</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m8 l8">
+                <!-- <h3>PROJECT VIEW</h3> -->
+                <p>{{project_desc}}</p>
+                <!-- <h4>Status</h4>
+                <p>{{status}}</p> -->
 
-          </div>
-          <div class="col s12 m4 l4">
-            <h4><a href="#" data-action="link" data-profile="{{owner._id}}" data-template="profile_view">{{owner.profile.firstname}} {{owner.profile.lastname}}</a></h4>
-            <h5>Skills for this project</h5>
-            <ul>
-                {{#each skills}}
-                <li>{{skill_name}}</li>
-                {{/each}}
-            </ul>
-            <h5>Estimated time to complete</h5>
-              <p>Here goes some time </p>
-            <h5>Project Due Date</h5>
-            <p>{{date date_expiry}}</p>
-            <!-- <h5>Date created</h5>
-            <p>{{date_added}}</p> -->
-            <h5>Date launched</h5>
-            <p>{{date date_launched}}</p>
-            <!-- if student - Have you applied -->
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12 m8 l8">
-            <div class="col s6">
-                <form id="save_project" name="save_project"  action="index.html" method="post">
+              </div>
+              <div class="col s12 m4 l4">
+                <h4><a href="#" data-action="link" data-profile="{{owner._id}}" data-template="profile_view">{{owner.profile.firstname}} {{owner.profile.lastname}}</a></h4>
+                <h5>Skills for this project</h5>
+                <ul>
+                  {{#each skills}}
+                  <li>{{skill_name}}</li>
+                  {{/each}}
+                </ul>
+                <h5>Estimated time to complete</h5>
+                <p>Here goes some time </p>
+                <h5>Project Due Date</h5>
+                <p>{{date date_expiry}}</p>
+                <!-- <h5>Date created</h5>
+                <p>{{date_added}}</p> -->
+                <h5>Date launched</h5>
+                <p>{{date date_launched}}</p>
+                <!-- if student - Have you applied -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 m8 l8">
+                <div class="col s6">
+                  <form id="save_project" name="save_project"  action="index.html" method="post">
                     <input type="submit" value="{{#if saved}}UNSAVE{{else}}SAVE{{/if}} PROJECT" class="btn">
-                </form>
-            </div>
-            <div class="col s6">
-                <form id="apply_project" name="apply_project"  action="index.html" method="post">
+                  </form>
+                </div>
+                <div class="col s6">
+                  <form id="apply_project" name="apply_project"  action="index.html" method="post">
                     <input type="submit" value="{{#if applied}}UNAPPLY{{else}}APPLY{{/if}} PROJECT" class="btn">
-                </form>
+                  </form>
+                </div>
+              </div>
             </div>
-          </div>
-    </div>
 
+          </div>
+          {{/with}}
+        </div>
+      </div>
     </div>
-    {{/with}}
   </div>
-</div>
 </template>
