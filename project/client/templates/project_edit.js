@@ -19,7 +19,7 @@ Template.project_edit.helpers({
             console.log(((x.length < 2) ? '0'+x : x));
             return ((x.length < 2) ? `0${x}` : x);
         }
-        console.log(`${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`);
+        // console.log(`${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`);
         return `${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`;
     }
 });
@@ -47,7 +47,7 @@ Template.project_edit.events({
         evt.preventDefault();
         console.log(Projects.update({'_id':this._id},{$set:{'project_desc':evt.target.value}}));
     },
-    'keyup #hours'(evt,wut){
+    'change #hours'(evt,wut){
       evt.preventDefault();
       console.log(Projects.update({'_id':this._id},{$set:{'est_hours':evt.target.value}}));
     },

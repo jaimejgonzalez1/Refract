@@ -6,7 +6,7 @@ import './project_view.html';
 
 Template.project_view.helpers({
     'open_project': function() {
-        console.log(Projects.findOne(Session.get('open_project')));
+        Projects.findOne(Session.get('open_project'));
         return Projects.findOne(Session.get('open_project'));
     },
     'skills': function() {

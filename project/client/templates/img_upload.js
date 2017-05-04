@@ -137,7 +137,9 @@ Template.uploadForm.events({
           } else {
             // alert('File "' + fileObj.name + '" successfully uploaded');
             // console.log(fileObj._id);
-            console.log(Images.remove({_id:Meteor.user().profile.pic_id}));
+            if (_.has(Meteor.user().profile, 'pic_id')) {
+                Images.remove({_id:Meteor.user().profile.pic_id});
+            }
             // console.log(Images.findOne({_id:Meteor.user().profile.pic_id}).remove({}));
             Meteor.users.update({_id: Meteor.userId()}, {$set:{"profile.pic_id":fileObj._id}});
           }
