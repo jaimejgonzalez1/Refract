@@ -1,60 +1,72 @@
 <template name="profile">
-    {{#with user}}
-    <div class="container sizer">
-        <div class="row">
-            <div class="col s12">
-                {{> uploadedFiles}}
-                {{> uploadForm}}
-                <h3 class="center-align">{{firstname}} {{lastname}}</h3>
-            </div>
-        </div>
-        <div class="row">
-        </div>
-        <div class="row">
-            <div class="col s12 m6">
-                <!-- {{> uploadedFiles}} -->
-                <!-- {{> uploadForm}} -->
-                <figure>
-                    <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
-                </figure>
-                <h4>Bio</h4>
-                <form id="saveBlurb" class="" action="index.html" method="post">
-                    <textarea placeholder="bio" value="{{blurb}}" id="blurb" name="blurb" rows="8" cols="80">{{blurb}}</textarea>
-                </form>
-                <form class="" action="index.html" method="post">
-                    <div class="input-field">
-                        <input id="profileLink" type="text" name="profileLink" value="{{profileLink}}">
-                        <label for="profileLink">Portfolio link
-                            <em>{{profileLink}}</em>
-                        </label>
+        <div class="container">
+          <div class="card white">
+            <div class="card-content">
+              <div class="row">
+                  <div class="col s12 m6">
+                      {{#with user}}
+                        {{> uploadedFiles}}
+                        {{> uploadForm}}
+                      {{/with}}
+                  </div>
+                  <div class="col s12 m6">
+                    {{#with user}}
+                    <h3>{{firstname}} {{lastname}}</h3>
+                    <div class="row">
+                      <form class="view-profile">
+                          <input class="btn" type="submit" name="view-profile" value="View Profile">
+                          <input class="btn" type="submit" name="view-profile" value="Save">
+                      </form>
                     </div>
-                    <div class="input-field">
-                        <input id="linkedInLink" type="text" name="linkedInLink" value="{{linkedInLink}}">
-                        <label for="linkedInLink">LinkedIn profile<em>{{linkedInLink}}</em>
-                        </label>
-                    </div>
-                </form>
+                    {{/with}}
+                  </div>
+              </div>
+            <div class="row">
+              <div class="col s12 m6">
+                {{#with user}}
+                  <!-- {{> uploadedFiles}} -->
+                  <!-- {{> uploadForm}} -->
+                  <figure>
+                      <!-- <img style="max-width: 300px;" src="default.JPG" alt=""> -->
+                  </figure>
+                  <h4>Conect</h4>
+                  <form class="" action="index.html" method="post">
+                      <div class="input-field">
+                          <input id="profileLink" type="text" name="profileLink" value="{{profileLink}}">
+                          <label for="profileLink">Portfolio link
+                              <em>{{profileLink}}</em>
+                          </label>
+                      </div>
+                      <div class="input-field">
+                          <input id="linkedInLink" type="text" name="linkedInLink" value="{{linkedInLink}}">
+                          <label for="linkedInLink">LinkedIn profile<em>{{linkedInLink}}</em>
+                          </label>
+                      </div>
+                  </form>
+                  <h4>Bio</h4>
+                  <form id="saveBlurb" class="" action="index.html" method="post">
+                      <textarea placeholder="bio" value="{{blurb}}" id="blurb" name="blurb" rows="8" cols="80">{{blurb}}</textarea>
+                  </form>
+                  {{/with}}
+              </div>
+              <div class="col s12 m6 ">
                 <h4>Skills</h4>
                 <ul>
                 {{#each skills}}
-                    <li><div class="chip">
+                    <li style="display:inline"><div class="chip">
                         {{skill_name}}
                         <i class="close material-icons">close</i>
                     </div></li>
                 {{/each}}
                 </ul>
-                <form class="view-profile">
-                    <input class="btn" type="submit" name="view-profile" value="View Profile">
-                </form>
-            </div>
-            <div class="col s12 m6 ">
-                <h4>Skills</h4>
-                {{> skills_selector}}
-                {{> logout}}
-            </div>
-            <!-- <a class="waves-effect waves-light btn" href="{{profileLink}}" target="_blank">Portfolio</a>
-            <a class="waves-effect waves-light btn" href="mailto:{{student_email}}">Contact</a> -->
+                  {{> skills_selector}}
+                  {{> logout}}
+              </div>
+              <!-- <a class="waves-effect waves-light btn" href="{{profileLink}}" target="_blank">Portfolio</a>
+              <a class="waves-effect waves-light btn" href="mailto:{{student_email}}">Contact</a> -->
+          </div>
         </div>
-    </div>
-    {{/with}}
+      </div>
+  </div>
+
 </template>

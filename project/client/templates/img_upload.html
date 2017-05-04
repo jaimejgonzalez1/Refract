@@ -14,16 +14,30 @@
   <p>No pic</p>
   {{/with}}
 </template> -->
-
 <template name="uploadForm">
-  {{#with currentUpload}}
-    Uploading <b>{{file.name}}</b>:
-    <span id="progress">{{progress.get}}%</span>
-  {{else}}
-    <input id="fileInput" type="file" />
-    <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
-  {{/with}}
+  <div class="file-field input-field">
+      <div class="btn">
+        <span>Upload Image</span>
+        <input type="file" id="fileInput">
+      </div>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text">
+      </div>
+    </div>
 </template>
+<!-- <template name="uploadForm">
+    <div class="file-field input-field">
+      <div class="btn">
+        {{#with currentUpload}}
+        Uploading <b>{{file.name}}</b>:
+        <span id="progress">{{progress.get}}%</span>
+        {{else}}
+        <input id="fileInput" type="file" />
+        <p><small>Upload file in <code>jpeg</code> or <code>png</code> format, with size less or equal to 10MB</small></p>
+        {{/with}}
+      </div>
+    </div>
+</template> -->
 
 <template name="uploadedFiles">
     {{#if hasImage}}
