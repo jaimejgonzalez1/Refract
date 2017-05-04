@@ -20,11 +20,15 @@
               </div>
               <div class="col s12 m4 l4">
                 <h4><a href="#" data-action="link" data-profile="{{owner._id}}" data-template="profile_view">{{owner.profile.firstname}} {{owner.profile.lastname}}</a></h4>
-                <h5>Skills for this project</h5>
+                <h5>Skills needed for this project</h5>
                 <ul>
-                  {{#each skills}}
-                  <li>{{skill_name}}</li>
-                  {{/each}}
+                    {{#each skills}}
+                    <li>
+                        <div class="chip">
+                            {{skill_name}}
+                        </div>
+                    </li>
+                    {{/each}}
                 </ul>
                 <h5>Estimated time to complete</h5>
                 <p>Here goes some time </p>

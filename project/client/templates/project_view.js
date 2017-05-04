@@ -34,6 +34,10 @@ Template.project_view.helpers({
         console.log(`${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`);
         // return `${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`;
         return thing.toDateString();
+    },
+    'skills': function() {
+        console.log(this);
+        return Skills.find({_id:{$in:this.skills}});
     }
 });
 

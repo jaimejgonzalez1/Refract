@@ -21,6 +21,10 @@ Template.project_edit.helpers({
         }
         // console.log(`${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`);
         return `${thing.getFullYear()}-${addZero(thing.getMonth()+1)}-${addZero(thing.getDate())}`;
+    },
+    'skills': function() {
+        console.log(this);
+        return Skills.find({_id:{$in:this.skills}});
     }
 });
 
