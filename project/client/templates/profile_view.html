@@ -13,19 +13,19 @@
             </div>
             <div class="col s12 m6">
               {{#with selected_user}}
-              <h3>{{firstname}} {{lastname}}</h3>
+              <h3>{{this.profile.firstname}} {{this.profile.lastname}}</h3>
               {{/with}}
             </div>
           </div>
           <div class="row">
             <div class="col s12 m6">
               {{#with selected_user}}
-              <h4>Personal Webpage:</h4><a href="{{profileLink}}"> {{profileLink}}</a>
-              <h4>LinkedIn:</h4><a href="{{linkedInLink}}">{{linkedInLink}}</a>
+              <h4>Personal Webpage:</h4><a href="{{this.profile.profileLink}}"> {{this.profile.profileLink}}</a>
+              <h4>LinkedIn:</h4><a href="{{this.profile.linkedInLink}}"> {{this.profile.linkedInLink}}</a>
               {{/with}}
               {{#with selected_user}}
               <h4>Blurb</h4>
-              <p>{{blurb}}</p>
+              <p>{{this.profile.blurb}}</p>
               {{#if isOwner}}
               <form class="edit-profile">
                   <input class="btn" type="submit" name="edit-profile" value="Edit Profile">
