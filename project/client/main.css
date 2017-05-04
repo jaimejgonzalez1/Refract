@@ -401,11 +401,11 @@ width: 100%;
 }
 
 .bookmark{
-position:relative;
-float:right;
-top:-0.4em;
-right:0.22em;
-font-size: 36px;
+  position:relative;
+  float:right;
+  top:-0.4em;
+  right:0.22em;
+  font-size: 36px;
 }
 .one-card:hover{
   background-color:lightgrey;
