@@ -19,7 +19,7 @@
                             </div>
                             <div data-action="link" data-template="project_full" class="card-content card-project inside">
                                 <a href="#"><span class='card-title activator grey-text text-darken-4 title'>{{project_name}}{{#if isProjectOwner}} {{/if}}</span></a>
-                                <p>{{est_hours}} Est. Hours </p>
+                                <p>{{#if est_hours}}{{est_hours}} Est. Hours{{/if}}</p>
                             </div>
                                 <div class="skills grey lighten-2">
                                     <ul>
