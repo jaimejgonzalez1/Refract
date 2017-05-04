@@ -41,9 +41,9 @@ Template.project_view.events({
     "click [data-action='link']": function (evt) {
         // set current project
         // load template
-        console.log(this._id);
-        console.log(evt.currentTarget);
-        console.log(evt.currentTarget.dataset.template);
+        // console.log(this._id);
+        // console.log(evt.currentTarget);
+        // console.log(evt.currentTarget.dataset.template);
         Session.set('selected_user', evt.currentTarget.dataset.profile);
         Session.set('last_template', Session.get('template_loaded'));
         Session.set('template_loaded', evt.currentTarget.dataset.template);

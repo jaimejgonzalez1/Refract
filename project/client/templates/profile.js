@@ -20,10 +20,11 @@ Template.profile.helpers({
     'profileLink': function() {
         return Meteor.user().profile.profileLink;
     },
-    // 'skills': function() {
-    //     console.log(this.skills);
-    //     return Skills.find({'id': {'$in': this.skills}});
-    // },
+    'selected_user': function() {
+        Meteor.subscribe('Meteorusers', [Session.get('selected_user')]);
+        console.log(Meteor.users.findOne(Session.get('selected_user')));
+        return Meteor.users.findOne(Session.get('selected_user'));
+    },
     'skills': function() {
         return Skills.find({'_id': {'$in': Meteor.users.findOne({_id:Session.get('selected_user')}).profile.skills_arr}});
     },

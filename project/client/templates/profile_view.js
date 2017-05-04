@@ -8,7 +8,7 @@ Template.profile_view.helpers({
     'selected_user': function() {
         Meteor.subscribe('Meteorusers', [Session.get('selected_user')]);
         console.log(Meteor.users.findOne(Session.get('selected_user')));
-        return Meteor.users.findOne(Session.get('selected_user')).profile;
+        return Meteor.users.findOne(Session.get('selected_user'));
     },
     'skills': function() {
         return Skills.find({'_id': {'$in': Meteor.users.findOne({_id:Session.get('selected_user')}).profile.skills_arr}});

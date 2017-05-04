@@ -1,6 +1,9 @@
 
 <template name="project_edit">
-  <div class="container">
+
+
+
+
     <div class="card">
         <div class="card-content">
           {{#with open_project}}
@@ -8,7 +11,7 @@
               <div class="col s12 m8">
                   <!-- <h3>PROJECT EDIT</h3> -->
                   {{#if isLaunched}}
-                  <h4>{{Project Name}} <span>THIS PROJECT IS LIVE!</span></h4>
+                  <h3>{{project_name}} <span style="color: red;">THIS PROJECT IS LIVE!</span></h3>
                   {{else}}
                   <h4>Project title</h4>
                   <input type="text" id="project_name_edit" name="project_name_edit" value="{{project_name}}">
@@ -41,8 +44,7 @@
           </div>
           {{/with}}
         </div>
-    </div>
-  </div>
+</div>
 </template>
 
 <template name="project_skills">

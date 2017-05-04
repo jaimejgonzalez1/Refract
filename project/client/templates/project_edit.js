@@ -38,6 +38,11 @@ Template.project_edit.events({
         Projects.update({'_id':Session.get('open_project')},{$set:{'date_paused': new Date()}});
         // change status of project
     },
+    'submit #delete_project'(evt, wut) {
+        evt.preventDefault();
+        Projects.remove({'_id':Session.get('open_project')});
+        // change status of project
+    },
     'keyup #project_name_edit'(evt, wut) {
         evt.preventDefault();
         console.log(this._id);
